@@ -21,6 +21,7 @@ from keras.layers import TimeDistributed
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from typing import Tuple
+from sys import exit
 
 BASE_DIR = os.path.abspath('./')
 BATCH_SIZE = 128
@@ -45,10 +46,11 @@ def load_glove_embeddings(word_index) -> np.ndarray:
     Return:
         embedding_matrix: Keras embedding layer
     """
+    print("Loading pretrained GloVe Embeddings...")
     embeddings_index = {}
     embedding_path = os.path.join(BASE_DIR, f'glove.6B.{EMBEDDING_DIM}d.txt')
 
-    if not os.exists(embedding_path):
+    if not os.path.exists(embedding_path):
         raise IOError(
             f"{embedding_path} not found. Download embeddings and unzip.")
 
@@ -78,22 +80,32 @@ def load_glove_embeddings(word_index) -> np.ndarray:
 
 
 def load_data() -> Tuple[np.ndarray, np.ndarray]:
+    from tests.utils import load_sentence_labelled
+
+    data = load_sentence_labelled()
+    return data['sentence'].as_matrix(), data['label'].as_matrix()
+
+
+@click.group()
+def cli():
     pass
 
 
-def preprocess_input_and_save(tokenizer=None) -> None:
+def preprocess_input_and_save() -> None:
     text, labels = load_data()
 
+    print(f'\t{len(text)} training samples and {len(labels)} labels')
     tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
     tokenizer.fit_on_texts(text)
 
+    print(f'\t{len(tokenizer.word_index)} unique words found.')
     sequences = tokenizer.texts_to_sequences(text)
 
     padded_sequences = pad_sequences(sequences, maxlen=MAX_SEQ_LENGTH)
 
     indices = np.arange(padded_sequences.shape[0])
     np.random.shuffle(indices)
-    data = pad_sequences[indices]
+    data = padded_sequences[indices]
     labels = labels[indices]
     num_validation_samples = int(VALIDATION_SPLIT * data.shape[0])
 
@@ -108,14 +120,27 @@ def preprocess_input_and_save(tokenizer=None) -> None:
     with open(PREPROCESSED_DATA_PATH, 'wb') as f:
         pickle.dump((x_train, y_train, x_val, y_val), f)
 
+    print('\tTraining data saved')
+
 
 def load_preprocess_data(path: str) -> Tuple[np.ndarray,
                                              np.ndarray,
                                              np.ndarray,
                                              np.ndarray]:
     if not os.path.exists(path):
-        raise IOError(f'Preprocessed data not found at {path}')
+        print(f'Preprocessed data not found at {path}')
+        if click.prompt(
+                "Do you want to create Preprocessed data (may take awhile)?"):
+            print("Create data...")
+            if not os.path.exists(SAVE_DIR):
+                os.mkdir(SAVE_DIR)
+            if not os.path.exists(LOG_DIR):
+                os.mkdir(LOG_DIR)
+            preprocess_input_and_save()
+        else:
+            exit()
 
+    print("Loading data...")
     with open(path, 'rb') as f:
         x_train, y_train, x_val, y_val = pickle.load(f)
 
@@ -132,11 +157,6 @@ def load_tokenizer(path: str) -> Tokenizer:
     return tokenizer
 
 
-@click.group()
-def cli():
-    pass
-
-
 @cli.command()
 @click.option('--arch', '-a', type=click.Choice(['RNN', 'CNN']), default='RNN')
 @click.option('--log', '-l', is_flag=True)
@@ -149,6 +169,7 @@ def train(arch: str, log: bool):
     seq_input = Input(shape=(MAX_SEQ_LENGTH,), dtype='int32')
     embedding = load_glove_embeddings(tokenizer.word_index)(seq_input)
 
+    print("Building model...")
     # Hidden Layers
     if arch == 'RNN':
         x = LSTM(50, return_sequences=True)(embedding)
@@ -167,11 +188,6 @@ def train(arch: str, log: bool):
     model.compile(loss='binary_crossentropy',
                   optimizer='adam')
 
-    if os.path.exists(SAVE_DIR):
-        os.mkdir(SAVE_DIR)
-    if os.path.exists(LOG_DIR):
-        os.mkdir(LOG_DIR)
-
     callback_list = [
         EarlyStopping(monitor='val_loss', patience=PATIENCE),
         ModelCheckpoint(SAVE_DIR, monitor='val_loss',
@@ -182,6 +198,7 @@ def train(arch: str, log: bool):
                                          histogram_freq=True,
                                          write_graph=True,
                                          batch_size=BATCH_SIZE))
+    model.summary()
 
     model.fit(x_train, y_train,
               batch_size=BATCH_SIZE,
