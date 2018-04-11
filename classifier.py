@@ -1,29 +1,38 @@
 # coding: utf-8
 
+import click
 import numpy as np
 import os
+import pickle
 
+from keras.callbacks import EarlyStopping
+from keras.callbacks import ModelCheckpoint
+from keras.callbacks import TensorBoard
 from keras.layers import Embedding
 from keras.layers import Conv1D
 from keras.layers import Dense
 from keras.layers import GlobalMaxPooling1D
 from keras.layers import Input
 from keras.layers import LSTM
+from keras.models import load_model
 from keras.models import Model
 from keras.layers import MaxPooling1D
 from keras.layers import TimeDistributed
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from typing import Tuple
-from typing import Dict
 
 BASE_DIR = os.path.abspath('./')
 BATCH_SIZE = 128
 EMBEDDING_DIM = 100
 EPOCHS = 20
-NUM_LABELS = 1
+LOG_DIR = os.path.join(BASE_DIR, 'logs')
 MAX_SEQ_LENGTH = 1000
 MAX_NUM_WORDS = 20000
+PATIENCE = 5
+SAVE_DIR = os.path.join(BASE_DIR, 'models')
+TOKENIZER_PATH = os.path.join(SAVE_DIR, 'tokenizer.pickle')
+PREPROCESSED_DATA_PATH = os.path.join(SAVE_DIR, 'preprocessed_data.pickle')
 VALIDATION_SPLIT = .2
 
 
@@ -72,18 +81,13 @@ def load_data() -> Tuple[np.ndarray, np.ndarray]:
     pass
 
 
-def preprocess_input() -> Tuple[Dict,
-                                np.ndarray,
-                                np.ndarray,
-                                np.ndarray,
-                                np.ndarray]:
+def preprocess_input_and_save(tokenizer=None) -> None:
     text, labels = load_data()
 
     tokenizer = Tokenizer(num_words=MAX_NUM_WORDS)
     tokenizer.fit_on_texts(text)
 
     sequences = tokenizer.texts_to_sequences(text)
-    word_index = tokenizer.word_index
 
     padded_sequences = pad_sequences(sequences, maxlen=MAX_SEQ_LENGTH)
 
@@ -98,24 +102,58 @@ def preprocess_input() -> Tuple[Dict,
     x_val = data[-num_validation_samples:]
     y_val = labels[-num_validation_samples:]
 
-    return word_index, x_train, y_train, x_val, y_val
+    with open(TOKENIZER_PATH, 'wb') as f:
+        pickle.dump(tokenizer, f, protocol=pickle.HIGHEST_PROTOCOL)
+
+    with open(PREPROCESSED_DATA_PATH, 'wb') as f:
+        pickle.dump((x_train, y_train, x_val, y_val), f)
 
 
-def model_train(network_type: str='RNN'):
-    word_index, x_train, y_train, x_val, y_val = preprocess_input()
+def load_preprocess_data(path: str) -> Tuple[np.ndarray,
+                                             np.ndarray,
+                                             np.ndarray,
+                                             np.ndarray]:
+    if not os.path.exists(path):
+        raise IOError(f'Preprocessed data not found at {path}')
+
+    with open(path, 'rb') as f:
+        x_train, y_train, x_val, y_val = pickle.load(f)
+
+    return x_train, y_train, x_val, y_val
+
+
+def load_tokenizer(path: str) -> Tokenizer:
+    if not os.path.exists(path):
+        raise IOError(f'Tokenizer not found at {path}')
+
+    with open(path, 'rb') as f:
+        tokenizer = pickle.load(f)
+
+    return tokenizer
+
+
+@click.group()
+def cli():
+    pass
+
+
+@cli.command()
+@click.option('--arch', '-a', type=click.Choice(['RNN', 'CNN']), default='RNN')
+@click.option('--log', '-l', is_flag=True)
+def train(arch: str, log: bool):
+    x_train, y_train, x_val, y_val = load_preprocess_data(
+        PREPROCESSED_DATA_PATH)
+    tokenizer = load_tokenizer(TOKENIZER_PATH)
 
     # Input Layers
     seq_input = Input(shape=(MAX_SEQ_LENGTH,), dtype='int32')
-    embedding = load_glove_embeddings(word_index)(seq_input)
+    embedding = load_glove_embeddings(tokenizer.word_index)(seq_input)
 
     # Hidden Layers
-    if network_type == 'RNN':
+    if arch == 'RNN':
         x = LSTM(50, return_sequences=True)(embedding)
-
-        # Output Layers
         out = TimeDistributed(Dense(1, activation='sigmoid'))(x)
-
-    elif network_type == 'CNN':
+    elif arch == 'CNN':
         x = Conv1D(128, 5, activation='relu')(embedding)
         x = MaxPooling1D(5)(x)
         x = Conv1D(128, 5, activation='relu')(x)
@@ -123,14 +161,57 @@ def model_train(network_type: str='RNN'):
         x = Conv1D(128, 5, activation='relu')(x)
         x = GlobalMaxPooling1D()(x)
         x = Dense(128, activation='relu')(x)
-        out = Dense(NUM_LABELS, activation='sigmoid')(x)
+        out = Dense(1, activation='sigmoid')(x)
 
     model = Model(seq_input, out)
     model.compile(loss='binary_crossentropy',
-                  optimizer='adam',
-                  metrics=['acc'])
+                  optimizer='adam')
+
+    if os.path.exists(SAVE_DIR):
+        os.mkdir(SAVE_DIR)
+    if os.path.exists(LOG_DIR):
+        os.mkdir(LOG_DIR)
+
+    callback_list = [
+        EarlyStopping(monitor='val_loss', patience=PATIENCE),
+        ModelCheckpoint(SAVE_DIR, monitor='val_loss',
+                        save_best_only=True)
+    ]
+    if log:
+        callback_list.append(TensorBoard(LOG_DIR,
+                                         histogram_freq=True,
+                                         write_graph=True,
+                                         batch_size=BATCH_SIZE))
 
     model.fit(x_train, y_train,
               batch_size=BATCH_SIZE,
               epochs=EPOCHS,
+              callbacks=callback_list,
               validation_data=(x_val, y_val))
+    if log:
+        print("Training was logged. Run tensorboard --logdir=<log_path>")
+
+
+@cli.command()
+@click.argument('model', type=click.Path(exists=True))
+@click.argument('text_file', type=click.Path(exists=True))
+def predict(path: str, text_file: str):
+    model = load_model(path)
+    tokenizer = load_tokenizer(TOKENIZER_PATH)
+
+    with open(text_file, 'r') as f:
+        text = f.read()
+
+    if not text:
+        raise IOError(f'No data in file ({text_file})')
+
+    tokens = tokenizer.texts_to_sequences(text)
+    data = pad_sequences(tokens, maxlen=MAX_SEQ_LENGTH)
+
+    pred = model.predict(data)
+
+    print(f'Predicted {pred}')
+
+
+if __name__ == '__main__':
+    cli()
