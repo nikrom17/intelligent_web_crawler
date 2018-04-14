@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/10 13:12:41 by nroman            #+#    #+#              #
-#    Updated: 2018/04/10 17:14:40 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/14 12:01:37 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -29,26 +29,22 @@ next_index = 0
 
 parameters =    {"q": search_terms,
                  "cx": cx,
-                 "key": key
+                 "key": key,
                  "start": next_index
                 }
 page = requests.request("GET", url, params=parameters)
 results = json.loads(page.text)
 df = process_search(results)
 next_index = results["queries"]["nextPage"][0]["startIndex"]
-
-
-    """
-    print("kind:")
-    print(results["kind"])
-    print("url:")
-    print(results["url"])
-    print("queries:")
-    print(results["queries"])
-    print("searchInformation:")
-    print(results["searchInformation"])
-    print("Items:")
-    print(results["items"])
-    """
-
-
+"""
+print("kind:")
+print(results["kind"])
+print("url:")
+print(results["url"])
+print("queries:")
+print(results["queries"])
+print("searchInformation:")
+print(results["searchInformation"])
+print("Items:")
+print(results["items"])
+"""
