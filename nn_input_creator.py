@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/05 10:15:09 by nroman            #+#    #+#              #
-#    Updated: 2018/04/14 13:41:38 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/14 16:29:42 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -40,8 +40,8 @@ def header_list_generator(results):
         soup = bs(html.content, "lxml")
         for j in range(6):
             tag = 'h' + str(j)
-            listings = soup.find_all(tag)
-            headers.append(listings)
+            for listings in soup.find_all(tag, text=True):
+                headers.append(listings.find_all(text=True))
     '''
     for tag in listings:
         try:
@@ -84,6 +84,7 @@ def main():
     args = argument_parser()
   #  query = quote_plus(args.query)
     query = quote_plus("Artificial Intelligence Sales Analytics")
+    print(query)
     api_response = google_custom_search_api(query)
     header_list_generator(api_response)
     return (api_response)
