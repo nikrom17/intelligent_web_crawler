@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/05 10:15:09 by nroman            #+#    #+#              #
-#    Updated: 2018/04/14 16:29:42 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/14 17:28:04 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -38,6 +38,7 @@ def header_list_generator(results):
         # using requests
         html = requests.request("GET", url)
         soup = bs(html.content, "lxml")
+        headers.append(url)
         for j in range(6):
             tag = 'h' + str(j)
             for listings in soup.find_all(tag, text=True):
@@ -52,6 +53,13 @@ def header_list_generator(results):
     '''
     print(headers)
     print(len(headers))
+    header_file = open("list_of_headers.txt", "w+")
+    for i in range(len(headers)):
+        if (len(headers[i]) == 1):
+            header_file.write(str(headers[i][0]) + '\n')
+        else:
+            header_file.write(str(headers[i]) + '\n')
+    header_file.close()
     return(headers)
 
 # format query in pandas format
