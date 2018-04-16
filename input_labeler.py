@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/14 19:42:05 by nroman            #+#    #+#              #
-#    Updated: 2018/04/16 11:14:14 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/16 12:26:15 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,6 +24,23 @@ def argument_parser():
     parser.add_argument("-query", help="Enter query")
     return (parser.parse_args())
 
+def label_data(headers):
+    labels = dict([("o", "\tB-ORG"), ("oo", "\tI-ORG"), ("p", "\tB-PER"), ("pp", "\tI-PER"), ("l", "\tB-LOC"), ("ll", "\tI-LOC"), ("m", "\tB-MISC"), ("mm", "\tI-MISC"), ("0", "\t0")])
+    l = len(headers)
+    for i in range(l):
+        print(headers[i][0])
+        while True:
+            lbl_to_add = input("Enter lable code: ")
+            print(lbl_to_add)
+            try:
+                headers[i][0] = headers[i][0] + labels[lbl_to_add]
+            except:
+                print("invalid label: choose o, oo, p, pp, l, ll, m, mm, 0")
+                continue
+            else:
+                break
+    return (headers)
+
 def header_list_generator(results):
     length = len(results)
     headers = []
@@ -39,6 +56,7 @@ def header_list_generator(results):
             for listings in soup.find_all(tag, text=True):
                 headers.append(listings.find_all(text=True))
     print(len(headers))
+    headers = label_data(headers)
     header_file = open("list_of_headers.txt", "a+")
     for i in range(len(headers)):
         if (len(headers[i]) == 1):
