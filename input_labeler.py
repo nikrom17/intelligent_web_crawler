@@ -56,13 +56,26 @@ def header_list_generator(results):
             for listings in soup.find_all(tag, text=True):
                 headers.append(listings.find_all(text=True))
     print(len(headers))
+    
+    length = len(headers)
+    new_headers = []
+    for i in range(length):
+        #print(headers[i][0])
+        temp = [w for w in re.split('([^0-9A-Za-z])', headers[i][0]) if w]
+       # print(temp)
+        temp_len = len(temp)
+        for j in range(len(temp)):
+            if (temp[j].isalnum()):
+        #        print(temp[j] + ":   " + str(temp[j].isalnum()))
+                new_headers.append(temp[j])
+        new_headers.append('\n')
     headers = label_data(headers)
     header_file = open("list_of_headers.txt", "a+")
-    for i in range(len(headers)):
-        if (len(headers[i]) == 1):
-            header_file.write(str(headers[i][0]) + '\n')
+    for i in range(len(new_headers)):
+        if (new_headers[i] == '\n'): 
+            header_file.write(str(new_headers[i]))
         else:
-            header_file.write(str(headers[i]) + '\n')
+            header_file.write(str(new_headers[i]) + '\n')
     header_file.close()
     return(headers)
 
