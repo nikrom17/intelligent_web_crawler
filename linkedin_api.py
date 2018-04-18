@@ -57,7 +57,7 @@ class MyAuth(requests.auth.AuthBase):
         r.headers['Authorization'] = 'Bearer ' + self.token['access_token']
         return r
 
-response = requests.request("GET", url_search, auth=MyAuth())
+response = requests.request("GET", url_search, "AQXdA5t0w0t0-7kLiWdyY4wjhsOLDGEIoRn52XRKr1Of_5y-c34bRRw2v3DX5Bqt-CvIutJHSZS42cz6Sn6NagaqF-sOugEGnxAvSP9lmFxIPaDUfxJDtHt37yBK9mPi_ph5zskeMtcbrYluR_9LOPCR_e-nlJhzEuer6TZClrT8mK2QDD-wT06Jui-c61e5zYmYATjtAvjX66GhqxV6uBHAsr75_7oP993Px70-mbb_B90uAYJ9DFmbeDKOyxXlc8sY7xBA9de2y7EmdECfeekF0wBQVL7HJaIg1OQNFgEL_EoMgMXvNYydRQOyKJD6CuL3zFvzHo9TvJbB8YtB7_zi2GH2Lg")
 print(response.keys())
 
 """
