@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/17 17:38:36 by nroman            #+#    #+#              #
-#    Updated: 2018/04/17 22:20:37 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/18 00:24:38 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -115,7 +115,7 @@ def process_search(results):
     return df
 
 def google_custom_search_api(query):
-    results = search(query, tld='com', lang='en', start=0, stop=1, pause=3.0)
+    results = search(query, tld='com', lang='en', num=1, start=0, stop=1, pause=10.0)
     return results
 
 def main():
