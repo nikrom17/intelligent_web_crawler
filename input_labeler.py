@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/14 19:42:05 by nroman            #+#    #+#              #
-#    Updated: 2018/04/16 12:26:15 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/17 15:51:36 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,11 +42,8 @@ def label_data(headers):
     return (headers)
 
 def header_list_generator(results):
-    length = len(results)
     headers = []
-    print(length)
-    for i in range(length):
-        url = results["items"][i]["link"]
+    for url in results:
         print(url)
         html = requests.request("GET", url)
         soup = bs(html.content, "lxml")
@@ -60,21 +57,22 @@ def header_list_generator(results):
     length = len(headers)
     new_headers = []
     for i in range(length):
-        #print(headers[i][0])
-        temp = [w for w in re.split('([^0-9A-Za-z])', headers[i][0]) if w]
+        print(headers[i][0])
+        #temp = [w for w in re.split('[^0-9A-Za-z\.\-]', headers[i][0])]
+        temp = [w for w in re.split('[^0-9A-Za-z\.\-]|(?<!\w)[.]|[.](?!\w)', headers[i][0])]
+        print(temp)
        # print(temp)
         temp_len = len(temp)
         for j in range(len(temp)):
-            if (temp[j].isalnum()):
         #        print(temp[j] + ":   " + str(temp[j].isalnum()))
-                new_headers.append(temp[j])
+            new_headers.append(temp[j])
         new_headers.append('\n')
-    headers = label_data(headers)
+   # headers = label_data(headers)
     header_file = open("list_of_headers.txt", "a+")
     for i in range(len(new_headers)):
         if (new_headers[i] == '\n'): 
             header_file.write(str(new_headers[i]))
-        else:
+        elif (new_headers[i]):
             header_file.write(str(new_headers[i]) + '\n')
     header_file.close()
     return(headers)
@@ -91,27 +89,30 @@ def google_custom_search_api(query):
     url = "https://www.googleapis.com/customsearch/v1"
     cx = "013712426752801183447:sbjpxtoakh4"
     key = "AIzaSyAH49BOT1KXhbmL8Lpf7OCD989JNyqXjzM"
-    #next_index = 0
-    parameters =    {"q": query,
-                     "cx": cx,
-                     "key": key
-                    # "start": next_index
-                    }
-    page = requests.request("GET", url, params=parameters)
-    results = json.loads(page.text)
-    # I don't think we need to format the data in pandas just yet.
-            # api_response = process_search(results)
-    # Use if we want to check more than 10 results/query
-             # next_index = results["queries"]["nextPage"][0]["startIndex"]
-    return(results)
+    next_index = 1
+    results= []
+    for i in range(3):
+        parameters =    {"q": query,
+                         "cx": cx,
+                         "key": key,
+                        "start": next_index
+                        }
+        page = requests.request("GET", url, params=parameters)
+        temp = json.loads(page.text)
+        print(temp.keys())
+        next_index = temp["queries"]["nextPage"][0]["startIndex"]
+        print(next_index)
+        results.append(temp["items"][i]["link"])
+        print(results)
+        return(results)
 
 def main():
     args = argument_parser()
     #query = quote_plus(args.query)
     print(args.query)
-    api_response = google_custom_search_api(args.query)
-    print(api_response.keys())
-    header_list_generator(api_response)
+    for i in range(3):
+        api_response = google_custom_search_api(args.query)
+        header_list_generator(api_response)
     return (api_response)
 
 if __name__ == "__main__":
