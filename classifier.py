@@ -1,9 +1,11 @@
 # coding: utf-8
 
 import click
+import datetime
 import numpy as np
 import os
 import pickle
+import tensorflow as tf
 
 from keras.callbacks import EarlyStopping
 from keras.callbacks import ModelCheckpoint
@@ -11,30 +13,95 @@ from keras.callbacks import TensorBoard
 from keras.layers import Embedding
 from keras.layers import Conv1D
 from keras.layers import Dense
+from keras.layers import Dropout
 from keras.layers import GlobalMaxPooling1D
 from keras.layers import Input
+from keras.layers import Flatten
 from keras.layers import LSTM
 from keras.models import load_model
 from keras.models import Model
 from keras.layers import MaxPooling1D
-from keras.layers import TimeDistributed
 from keras.preprocessing.text import Tokenizer
 from keras.preprocessing.sequence import pad_sequences
 from typing import Tuple
 from sys import exit
 
 BASE_DIR = os.path.abspath('./')
-BATCH_SIZE = 128
-EMBEDDING_DIM = 100
-EPOCHS = 20
+BATCH_SIZE = 32
+EMBEDDING_DIM = 200
+EPOCHS = 100
 LOG_DIR = os.path.join(BASE_DIR, 'logs')
-MAX_SEQ_LENGTH = 1000
-MAX_NUM_WORDS = 20000
+MAX_SEQ_LENGTH = 100
+MAX_NUM_WORDS = 10000
 PATIENCE = 5
 SAVE_DIR = os.path.join(BASE_DIR, 'models')
-TOKENIZER_PATH = os.path.join(SAVE_DIR, 'tokenizer.pickle')
-PREPROCESSED_DATA_PATH = os.path.join(SAVE_DIR, 'preprocessed_data.pickle')
+CHKPT_DIR = os.path.join(SAVE_DIR, 'checkpoints')
+TOKENIZER_PATH = os.path.join(
+    SAVE_DIR, f'tokenizer_{MAX_NUM_WORDS}.pickle')
+PREPROCESSED_DATA_PATH = os.path.join(
+    SAVE_DIR, f'preprocessed_data_{MAX_NUM_WORDS}_{MAX_SEQ_LENGTH}.pickle')
 VALIDATION_SPLIT = .2
+VOCAB_DIR = os.path.join(SAVE_DIR, 'glove_vocab.pickle')
+
+
+class TrainValTensorBoard(TensorBoard):
+    def __init__(self, log_dir='./logs', **kwargs):
+        # Make the original `TensorBoard` log to a subdirectory 'training'
+        training_log_dir = os.path.join(log_dir, 'training')
+        super(TrainValTensorBoard, self).__init__(training_log_dir, **kwargs)
+
+        # Log the validation metrics to a separate subdirectory
+        self.val_log_dir = os.path.join(log_dir, 'validation')
+
+    def set_model(self, model):
+        # Setup writer for validation metrics
+        self.val_writer = tf.summary.FileWriter(self.val_log_dir)
+        super(TrainValTensorBoard, self).set_model(model)
+
+    def on_epoch_end(self, epoch, logs=None):
+        # Pop the validation logs and handle them separately with
+        # `self.val_writer`. Also rename the keys so that they can
+        # be plotted on the same figure with the training metrics
+        logs = logs or {}
+        val_logs = {k.replace('val_', ''): v for k,
+                    v in logs.items() if k.startswith('val_')}
+        for name, value in val_logs.items():
+            summary = tf.Summary()
+            summary_value = summary.value.add()
+            summary_value.simple_value = value.item()
+            summary_value.tag = name
+            self.val_writer.add_summary(summary, epoch)
+        self.val_writer.flush()
+
+        # Pass the remaining logs to `TensorBoard.on_epoch_end`
+        logs = {k: v for k, v in logs.items() if not k.startswith('val_')}
+        super(TrainValTensorBoard, self).on_epoch_end(epoch, logs)
+
+    def on_train_end(self, logs=None):
+        super(TrainValTensorBoard, self).on_train_end(logs)
+        self.val_writer.close()
+
+
+def create_glove_vocab() -> None:
+    if os.path.exists(VOCAB_DIR):
+        return
+
+    embeddings_index = {}
+    embedding_path = os.path.join(BASE_DIR, f'glove.6B.{EMBEDDING_DIM}d.txt')
+
+    if not os.path.exists(embedding_path):
+        raise IOError(
+            f"{embedding_path} not found. Download embeddings and unzip.")
+
+    with open(embedding_path, 'r') as f:
+        for line in f:
+            values = line.split()
+            word = values[0]
+            coefs = np.asarray(values[1:], dtype='float32')
+            embeddings_index[word] = coefs
+
+    with open(VOCAB_DIR, 'wb') as f:
+        pickle.dump(dict(embeddings_index.keys()), f)
 
 
 def load_glove_embeddings(word_index) -> np.ndarray:
@@ -160,7 +227,10 @@ def load_tokenizer(path: str) -> Tokenizer:
 @cli.command()
 @click.option('--arch', '-a', type=click.Choice(['RNN', 'CNN']), default='RNN')
 @click.option('--log', '-l', is_flag=True)
-def train(arch: str, log: bool):
+@click.option('--name', '-n', type=str, help="Model name",
+              default=datetime.datetime.now().strftime("%Y_%d_%m_%I_%M"))
+@click.option('--summary', '-s', is_flag=True)
+def train(arch: str, log: bool, name: str, summary: bool):
     x_train, y_train, x_val, y_val = load_preprocess_data(
         PREPROCESSED_DATA_PATH)
     tokenizer = load_tokenizer(TOKENIZER_PATH)
@@ -172,41 +242,50 @@ def train(arch: str, log: bool):
     print("Building model...")
     # Hidden Layers
     if arch == 'RNN':
-        x = LSTM(50, return_sequences=True)(embedding)
-        out = TimeDistributed(Dense(1, activation='sigmoid'))(x)
+        x = LSTM(100, dropout=0.2, return_sequences=True)(embedding)
+        x = LSTM(50, dropout=0.2)(x)
+        out = Dense(1, activation='sigmoid')(x)
     elif arch == 'CNN':
-        x = Conv1D(128, 5, activation='relu')(embedding)
-        x = MaxPooling1D(5)(x)
-        x = Conv1D(128, 5, activation='relu')(x)
-        x = MaxPooling1D(5)(x)
-        x = Conv1D(128, 5, activation='relu')(x)
-        x = GlobalMaxPooling1D()(x)
-        x = Dense(128, activation='relu')(x)
+        x = Conv1D(64, 5, activation='relu')(embedding)
+        x = Dropout(.2)(x)
+        x = MaxPooling1D(4)(x)
+        x = LSTM(50, dropout=0.2)(x)
         out = Dense(1, activation='sigmoid')(x)
 
     model = Model(seq_input, out)
     model.compile(loss='binary_crossentropy',
-                  optimizer='adam')
+                  optimizer='adam',
+                  metrics=['acc'])
 
+    if not os.path.exists(CHKPT_DIR):
+        os.mkdir(CHKPT_DIR)
+    model_checkpoint_path = os.path.join(CHKPT_DIR, name)
     callback_list = [
-        EarlyStopping(monitor='val_loss', patience=PATIENCE),
-        ModelCheckpoint(SAVE_DIR, monitor='val_loss',
+        EarlyStopping(monitor='val_loss', patience=PATIENCE, verbose=1),
+        ModelCheckpoint(model_checkpoint_path, monitor='val_loss',
                         save_best_only=True)
     ]
     if log:
-        callback_list.append(TensorBoard(LOG_DIR,
-                                         histogram_freq=True,
-                                         write_graph=True,
-                                         batch_size=BATCH_SIZE))
-    model.summary()
-
+        if not os.path.exists(LOG_DIR):
+            os.mkdir(LOG_DIR)
+        model_log_path = os.path.join(LOG_DIR, name)
+        print(
+            f'\tTraining is being logged. Run tensorboard --logdir={LOG_DIR}')
+        print(f'\t\tModel Name: {name}')
+        callback_list.append(TrainValTensorBoard(model_log_path,
+                                                 histogram_freq=EPOCHS // 5,
+                                                 write_grads=True,
+                                                 write_graph=False,
+                                                 batch_size=BATCH_SIZE))
+    if summary:
+        model.summary()
+    print("Training Model...")
     model.fit(x_train, y_train,
               batch_size=BATCH_SIZE,
               epochs=EPOCHS,
               callbacks=callback_list,
-              validation_data=(x_val, y_val))
-    if log:
-        print("Training was logged. Run tensorboard --logdir=<log_path>")
+              validation_data=(x_val, y_val),
+              verbose=1)
 
 
 @cli.command()
