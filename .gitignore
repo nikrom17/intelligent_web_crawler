@@ -102,3 +102,12 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+tags
+
+.*DS_Store
+.*chromedriver
+chromedriver
+
+data/
+models/
