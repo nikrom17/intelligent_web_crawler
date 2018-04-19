@@ -52,7 +52,6 @@ An accout is need to use the LinkedIn API. The Client ID and Secret are needed t
 1. Enter your LinkedIn login information
 1. You will recieve a token. This will last for 60 days.
 1. Copy and paste this token into ```linkedin_queries.py``` on line 18.
-![alt text](https://bytebucket.org/nikrom17/intelligent-web-crawler/raw/4bdd3e6705b1f987550e75697950c216d29c3134/pics/LI_Oaut2.png?token=3bc9fae5ad836b0f22547b5e6de4bb3686628465)
 
 #### Create Clearbit account: https://clearbit.com
 Clearbit has a family of APIs that can be used to get information about any company. They allow 50 free querries a month. Prices for a paid plan range from \$100/month (2,500 queries/month) to \$500/month (25,000 queries/month)
