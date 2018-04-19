@@ -9,12 +9,14 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
+	<!-- header -->
 	<nav class="navbar nav-header navbar-dark bg-dark" justify-content-between">
 		<h1><a class="navbar-brand" href="/">Intelligent Web Scrapper</a></h1>
 		<h2 class="nav-item navbar-brand">{{compData.name}}</h2>
 	</nav>
+	<!-- main info -->
 	<div class="container-fluid px-5 py-4">		
-		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=400" alt="{{compData.universalName}}" class="mx-auto d-block pb-4" />
+		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=400" alt="" class="mx-auto d-block pb-4" />
 
 				
 		{% if compData.specialties %}
@@ -45,12 +47,7 @@
 				{% endif %}		   
 			{% endfor %}
 		</p>
-		{% endif %}		
-
-
-		<h3>Contact</h3>
-		<p>Contact Name:</p>
-		<p>Contact Designation</p>
+		{% endif %}	
 		
 		<a href="{{compData.websiteUrl}}" target="_blank">Go to website</a>
 		
@@ -82,8 +79,6 @@
 		
 		
 	</div>
-	<!-- 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
 	<script src="scripts/app.js"></script>
 </body>
 </html>

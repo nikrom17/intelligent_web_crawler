@@ -8,7 +8,7 @@ def linkedin_api(query, start, chunk):
 
     #Query fields: https://developer.linkedin.com/docs/fields/company-profile
     companies = []
-    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'universal-name', 'email-domains', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
+    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'universal-name', 'email-domains', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start,'facet':'location,us:84','facet':'location,us:0'})
     for company in tmp_query["companies"]["values"]:
         companies.append(dict(company))
     return {'data':sort_companies(companies, query), 'total':tmp_query["companies"]["_total"] }

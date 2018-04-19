@@ -6,7 +6,6 @@ import requests
 from bs4 import BeautifulSoup as bs
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
-from ner import run_model
 from urllib.parse import unquote
 
 BASE_URL = "https://www.google.com"
@@ -28,7 +27,7 @@ def create_chrome_webdriver():
     chrome_options = Options()
     # May need to comment out headless if you aren't seeing results
     # Need to fill in captcha
-    chrome_options.add_argument("--headless")
+    # chrome_options.add_argument("--headless")
     chrome_options.add_argument("--window-size=1920x1080")
 
     chrome_driver_path = os.path.abspath("./chromedriver")
@@ -40,7 +39,7 @@ def create_chrome_webdriver():
                               executable_path=chrome_driver_path)
     # Uncomment if you need to use the web browser
     # for captcha
-    # driver.implicitly_wait(25)
+    driver.implicitly_wait(15)
     return driver
 
 
@@ -142,6 +141,17 @@ def get_contact_from_search(url: str, num: int=5, start: int=0,
     # Search About Pages
 
     try:
+        driver.get(f"{search_url}+about")
+
+        # Get Links
+        for ele in driver.find_elements_by_class_name("rc"):
+            link = ele.find_element_by_xpath(".//a").get_attribute("href")
+            if link not in links:
+                links.append(link)
+    except Exception:
+        pass
+
+    try:
         driver.get(f"{search_url}+inurl:about+us")
 
         # Get Links
@@ -181,26 +191,28 @@ def get_contact_from_search(url: str, num: int=5, start: int=0,
     entities = []
     for link in links:
         phone, email, entity = scrape_url(link)
-        if len(phone):
+        if phone:
             for num in phone:
                 if num not in nums:
                     nums.append(num)
-        if len(email):
+        if email:
             for e in email:
                 if e not in emails:
                     emails.append(e)
-        if len(entity):
+        if entity:
             for e in entity:
                 if e not in entities:
                     entities.append(e)
 
-    return {"phone": nums, "emails": emails, "entities": entities}
+    return nums, emails, entities, links
 
 
-def scrape_url(url: str):
+def scrape_url(url: str, get_entities: bool=False):
     """Scrapes a url for phone, email, and named entities
 
     """
+    if get_entities:
+        from ner import run_model
     html = requests.get(url, timeout=5)
     soup = bs(html.text, "lxml")
     for script in soup(["script", "style"]):
@@ -214,16 +226,22 @@ def scrape_url(url: str):
         r"[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+\.[A-Za-z]{2,3}",
         text)
 
-    # entities = [entity["text"]
-    #             for entity in run_model(text) if entity["type"] == 'PER']
+    if get_entities:
+        entities = [entity["text"]
+                    for entity in run_model(text) if entity["type"] == 'PER']
 
     for link in links:
-        ref = link.get('href')
-        if ref.find('mailto:') > -1:
-            emails.append(ref[7:])
-        elif ref.find('tel:') > -1:
-            phone.append(ref[4:])
+        try:
+            ref = link.get('href')
+            if ref.find('mailto:') > -1:
+                emails.append(ref[7:])
+            elif ref.find('tel:') > -1:
+                phone.append(ref[4:])
+        except Exception:
+            continue
 
+    if get_entities:
+        return set(phone), set(emails), set(entities)
     return set(phone), set(emails), []
 
 

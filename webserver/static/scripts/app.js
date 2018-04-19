@@ -1,6 +1,8 @@
 var app = angular.module("myModule", ['ngCookies']);
 
 app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$cookies) {
+
+    // get data from flask
     $scope.callData = function($event){
         $event.preventDefault();
 
@@ -22,6 +24,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
         });
     }
 
+    // check cookie
     $scope.checkCookie = function(){
         $scope.currentPage = 0;
         if ($cookies.get('cookie'))
@@ -45,6 +48,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
         }       
     }
 
+    // pagination handling
     $scope.nextPage = function($event){
         if ($scope.currentPage < $scope.totalCompanies/20)
         {
@@ -60,16 +64,10 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
             $scope.callData($event);
         }        
     }
-
-    $scope.getDomainUrl = function(url){
-        $http.get('/api/myRemoteSiteTester', {params: {target: myUrl}}) 
-           .success(function(data) {
-                  alert(data);
-            });
-        return splitted[1];
-    }
 }]);
 
+
+// use fallback img if needed
 app.directive('fallbackSrc', function () {
     var fallbackSrc = {
         link: function postLink(scope, iElement, iAttrs) {
