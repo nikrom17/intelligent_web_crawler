@@ -6,7 +6,7 @@
 #    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2018/04/14 19:42:05 by nroman            #+#    #+#              #
-#    Updated: 2018/04/16 11:14:14 by nroman           ###   ########.fr        #
+#    Updated: 2018/04/19 01:36:18 by nroman           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -31,15 +31,29 @@ def header_list_generator(results):
     for i in range(length):
         url = results["items"][i]["link"]
         print(url)
+        # using urllib  
+        # html = urlopen(url)
+        # soup = bs(html.read(), "lxml")
+
+        # using requests
         html = requests.request("GET", url)
         soup = bs(html.content, "lxml")
-        #headers.append(url)
+        headers.append(url)
         for j in range(6):
             tag = 'h' + str(j)
             for listings in soup.find_all(tag, text=True):
                 headers.append(listings.find_all(text=True))
+    '''
+    for tag in listings:
+        try:
+            if re.match(ls_pattern, dv['id']):
+                headers.append(dv.attrs)
+        except:
+            continue
+    '''
+    print(headers)
     print(len(headers))
-    header_file = open("list_of_headers.txt", "a+")
+    header_file = open("list_of_headers.txt", "w+")
     for i in range(len(headers)):
         if (len(headers[i]) == 1):
             header_file.write(str(headers[i][0]) + '\n')
@@ -76,10 +90,10 @@ def google_custom_search_api(query):
 
 def main():
     args = argument_parser()
-    #query = quote_plus(args.query)
-    print(args.query)
-    api_response = google_custom_search_api(args.query)
-    print(api_response.keys())
+  #  query = quote_plus(args.query)
+    query = quote_plus("Artificial Intelligence Sales Analytics")
+    print(query)
+    api_response = google_custom_search_api(query)
     header_list_generator(api_response)
     return (api_response)
 
