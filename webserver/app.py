@@ -27,12 +27,13 @@ query_data = []
 @app.route('/iws/api/v1.0/companies', methods=['POST'])
 def get_tasks():
 	global query_data
-	query_data = linkedin_api(request.get_json()["search"])
+	query_data = linkedin_api(request.get_json()["search"], 0 , 15)
 	return jsonify(query_data)
 
 @app.route('/companies/<string:name>', methods=['GET'])
 def get_company(name):
-	comp = [query for query in query_data["companies"]["values"] if query['universalName'] == name]
+	print(query_data[0])
+	comp = [query for query in query_data if query['universalName'] == name]
 	comp[0]["websiteUrl"] = ("http://" +comp[0]["websiteUrl"], comp[0]["websiteUrl"])[comp[0]["websiteUrl"].startswith('http')]
 	print (comp[0]["locations"]["values"][0]["address"]["city"])
 	#comp[0]["address"] = comp[0]["locations"]["values"][0]["address"]["city"]

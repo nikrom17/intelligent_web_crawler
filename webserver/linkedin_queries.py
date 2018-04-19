@@ -14,11 +14,11 @@ def flatten(seq,container=None):
     return container
 
 def linkedin_api(query, start, chunk):
-    application = linkedin.LinkedInApplication(token='AQVrwHpVM74WSg6DHVRzb6TLyNCR9drlq0f-LoLnkkT2OUmXrtnkW3PKdbvYc46vFI-ecvDNDGyDdsGH5RvD8G4ex_A2QbjS3oYwV0J37icRTqdvLarKy7PuP6inQNCCHMd2EfYY8-ure7JtAS9u8gWnMqgSN-e7pVpKxT_LyTL2NSvPxD25pF_pDNQz8y8Bkijnsl6CBZWZ9ivDO3pLDgKsgoegaLpgrHz2EFa52yAYo5FtKicnGVAx82vnFByy5BNq6DXfR84oPwSobwFQzywYZsbWyKJRlo9Yc9Ty656-18dVNer0Oy3P7YVRXd-F5kM25OpmS2nPHw7BGFreQ-EWrzrGEg')
+    application = linkedin.LinkedInApplication(token='AQVuNZs8EupnF2NOY1RfHCNTWw5bp2CaiKsnFs21jipwBcswYvqLdCLL3VdYN9szx6iP3rEFqGwjUb5GouvMzgyNFitdF1QtxwpSUOSmar9D6BTMhzrByBuMQR-Bt4TKqz4kfAHvMHaN3bRsMlCjyD0BhfYF9j5j0-p8kwDFfQc_tNAJlrbC-yUE1ihRkyE3Gj2I07lWudlccPG3ozci-LWBdousbxbh0i3lLcg31HG4a_mb-uvdvaM0ZtwLs0-a7Xke5ohQaUqwruvVBVCGhS-jZtafYIx5KYqrOxCMTCywulHpM8SLYo8sd-606daWQ4wfAicrkOUV9FwM9TVeZk5x-aqkBQ')
 
     #Query fields: https://developer.linkedin.com/docs/fields/company-profile
     companies = []
-    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
+    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'square-logo-url', 'universal-name', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
     for company in tmp_query["companies"]["values"]:
         companies.append(dict(company))
     return sort_companies(companies, query)
