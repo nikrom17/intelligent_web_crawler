@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<title>Intelligent web Scraper</title>
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
+</head>
+<body>
+	<div class="container-fluid">
+		<h1>{{compData.name}}</h1>
+		<img src="{{compData.squareLogoUrl}}" alt="{{compData.universalName}}">
+
+		<h2>Product/ Services</h2>
+		<p>{{compData.specialties}}</p>
+		
+		<h2>Contact</h2>
+		<p>Contact Name:</p>
+		<p>Contact Designation</p>
+		<p>Contact Email</p>
+		<p>Phone!</p>
+		<a href="{{compData.websiteUrl}}" target="_blank">Go to website</a>
+		
+		<h2>Other Contacts</h2>
+		<p>Facebook</p>
+		<p>Linkedin</p>
+		<p>Twitter</p>
+		
+		<h2>Location</h2>
+		<p>{{compData.address}}</p>
+		
+		<h2>Synopsis of Services</h2>
+		<p>{{compData.description}}</p>
+		
+		<h2>Sources:</h2>
+		<p>Source1</p>
+		<p>Source2</p>
+		<p>Source3</p>
+		
+		
+	</div>
+	<!-- 
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script> -->
+	<script src="scripts/app.js"></script>
+</body>
+</html>
