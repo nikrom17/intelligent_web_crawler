@@ -33,7 +33,7 @@ https://chromedriver.storage.googleapis.com/index.html?path=2.35/
 GET: https://api.linkedin.com/v2/search?q=companiesV2
 
 ####  Clearbit
-GET: https://logo.clearbit.com/:domain  <br /> 
+GET: https://logo.clearbit.com/:domain
 GET: https://company.clearbit.com/v2/companies/find?domain=:domain
 
 #### Google
