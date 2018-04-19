@@ -1,0 +1,2452 @@
+The	0
+Best	0
+Enterprise	0
+Software	0
+Startups	0
+To	0
+Work	0
+For	0
+In	0
+2016	0
+Based	0
+On	0
+Crunchbase	B-ORG
+Glassdoor	B-ORG
+
+53	0
+Startups	0
+That	0
+Will	0
+Take	0
+Off	0
+in	0
+2016	0
+According	0
+to	0
+Silicon	0
+Valley	0
+s	0
+Top	0
+Venture	0
+Capitalists	0
+
+Every	0
+corner	0
+of	0
+the	0
+tech	0
+sector	0
+should	0
+expect	0
+disruption	0
+next	0
+year	0
+from	0
+these	0
+newcomers	0
+
+1	0
+Vulcun	B-ORG
+Fantasy	0
+leagues	0
+for	0
+e-sports	0
+pro	0
+video	0
+games	0
+
+2	0
+Confluent	B-ORG
+A	0
+new	0
+leader	0
+among	0
+open-source	0
+software	0
+companies	0
+
+3	0
+VarageSale	B-ORG
+A	0
+virtual	0
+garage	0
+sale	0
+with	0
+your	0
+neighbors	0
+
+4	0
+Branch	B-ORG
+Metrics	I-ORG
+Bringing	0
+the	0
+Web	0
+to	0
+mobile	0
+apps	0
+
+5	0
+Namely	B-ORG
+Easy-to-use	0
+HR	0
+software	0
+
+6	0
+Datadog	B-ORG
+It	0
+s	0
+like	0
+crack	0
+for	0
+developers	0
+
+7	0
+EverString	B-ORG
+Finding	0
+sales	0
+leads	0
+with	0
+big	0
+data	0
+
+8	0
+Juicero	B-ORG
+The	0
+future	0
+of	0
+juice	0
+
+9	0
+Highfive	B-ORG
+Videoconferencing	0
+made	0
+cheap	0
+and	0
+easy	0
+
+10	B-ORG
+Mic	B-ORG
+Networks	I-ORG
+CNN	B-ORG
+for	0
+Millennials	0
+
+11	0
+Laurel	B-ORG
+and	I-ORG
+Wolf	I-ORG
+Online	0
+interior	0
+design	0
+
+12	0
+Segment	B-ORG
+Fast-growing	0
+analytics	0
+company	0
+
+13	0
+Looker	B-ORG
+Self-service	0
+big	0
+data	0
+for	0
+business	0
+people	0
+
+15	0
+Mapbox	B-ORG
+Design	0
+and	0
+publish	0
+beautiful	0
+maps	0
+
+16	0
+Origami	B-ORG
+Logic	I-ORG
+Organizing	0
+a	0
+deluge	0
+of	0
+marketing	0
+automation	0
+info	0
+
+17	0
+Databricks	B-ORG
+The	0
+inventors	0
+and	0
+keepers	0
+of	0
+Spark	B-ORG
+
+18	0
+Zoomdata	B-ORG
+Turn	0
+data	0
+into	0
+charts	0
+no	0
+matter	0
+where	0
+it	0
+s	0
+stored	0
+
+19	B-ORG
+Visier	B-ORG
+Bringing	0
+big	0
+data	0
+to	0
+human	0
+resources	0
+
+20	0
+UserTesting	B-ORG
+Have	0
+real	0
+users	0
+tell	0
+you	0
+what	0
+they	0
+think	0
+about	0
+your	0
+app	0
+
+22	0
+Banjo	B-ORG
+The	0
+latest	0
+trending	0
+news	0
+on	0
+social	0
+media	0
+by	0
+location	0
+
+23	0
+Nextdoor	B-ORG
+Social	0
+networking	0
+for	0
+neighborhoods	0
+
+24	0
+Jet.com	B-ORG
+Taking	0
+on	0
+Amazon	B-ORG
+with	0
+shopping	0
+bundles	0
+
+25	0
+Combatant	B-ORG
+Gentlemen	I-ORG
+Changing	0
+the	0
+high-end	0
+men	0
+s	0
+clothing	0
+market	0
+
+26	0
+Raise	B-ORG
+Buy	0
+and	0
+sell	0
+gift	0
+cards	0
+for	0
+cheap	0
+
+27	0
+Shiftgig	B-ORG
+Employment	0
+workplace	0
+for	0
+hourly	0
+shifts	0
+
+28	0
+Placester	B-ORG
+Moving	0
+real	0
+estate	0
+agents	0
+online	0
+
+29	B-ORG
+Wealthfront	B-ORG
+Affordable	0
+online	0
+investing	0
+
+30	0
+Forter	B-ORG
+Automated	0
+online	0
+fraud	0
+protection	0
+
+31	0
+enVerid	B-ORG
+Taking	0
+on	0
+the	0
+ancient	0
+HVAC	0
+market	0
+for	0
+a	0
+greener	0
+planet	0
+
+32	0
+Mobile	B-ORG
+ODT	I-ORG
+Fighting	0
+cervical	0
+cancer	0
+with	0
+a	0
+cell-phone	0
+camera	0
+
+33	0
+Surgical	B-ORG
+Theater	I-ORG
+Virtual	0
+reality	0
+for	0
+neurosurgeons	0
+
+34	0
+Windward	B-ORG
+Big	0
+data	0
+from	0
+the	0
+oceans	0
+
+35	0
+Samsara	B-ORG
+Sensors	0
+for	0
+the	0
+IoT	0
+world	0
+
+36	0
+Textio	B-ORG
+Letting	0
+smart	0
+computers	0
+analyze	0
+your	0
+job	0
+ads	0
+
+37	0
+Gigster	B-ORG
+Hire	0
+contract	0
+Silicon	0
+Valley	0
+programmers	0
+and	0
+teams	0
+in	0
+minutes	0
+
+38	0
+PlanGrid	B-ORG
+A	0
+cloud	0
+app	0
+for	0
+the	0
+construction	0
+industry	0
+
+39	0
+Procore	B-ORG
+Cloud	0
+software	0
+for	0
+the	0
+construction	0
+industry	0
+
+40	0
+Intercom	B-ORG
+A	0
+communication	0
+platform	0
+for	0
+all	0
+teams	0
+
+41	0
+HackerOne	B-ORG
+Crowdsourced	0
+bug	0
+bounty	0
+programs	0
+
+42	0
+ThinkingPhones	B-ORG
+Moving	0
+enterprise	0
+phones	0
+to	0
+the	0
+cloud	0
+
+43	0
+Cockroach	B-ORG
+Labs	I-ORG
+A	0
+database	0
+you	0
+can	0
+t	0
+destroy	0
+
+44	0
+ThousandEyes	B-ORG
+Look	0
+at	0
+all	0
+your	0
+corporate	0
+cloud	0
+services	0
+at	0
+once	0
+
+45	0
+Skyport	B-ORG
+Systems	I-ORG
+Securing	0
+the	0
+network	0
+by	0
+assuming	0
+hackers	0
+are	0
+there	0
+
+46	0
+CliQr	B-ORG
+Figure	0
+out	0
+the	0
+best	0
+cloud	0
+for	0
+your	0
+app	0
+
+47	B-ORG
+Incorta	0
+Instant	0
+real-time	0
+analytics	0
+
+48	0
+ThreatStream	B-ORG
+Making	0
+sense	0
+of	0
+all	0
+your	0
+potential	0
+security	0
+threats	0
+
+49	0
+Dtex	B-ORG
+Systems	I-ORG
+Protects	0
+against	0
+employee	0
+insiders	0
+wishing	0
+to	0
+do	0
+harm	0
+
+50	0
+FullStory	B-ORG
+Clarity	0
+on	0
+how	0
+people	0
+really	0
+use	0
+your	0
+website	0
+
+51	0
+Invotas	B-ORG
+Automation	0
+for	0
+complex	0
+manual	0
+security	0
+tasks	0
+
+52	0
+Tamr	B-ORG
+Cleaning	0
+up	0
+all	0
+that	0
+big	0
+data	0
+
+53	0
+Trifacta	B-ORG
+Organizing	0
+big	0
+data	0
+
+Startup	0
+
+The	0
+25	0
+hottest	0
+San	0
+Francisco	0
+startups	0
+to	0
+watch	0
+in	0
+2016	0
+
+Honor	0
+wants	0
+to	0
+reinvent	0
+how	0
+you	0
+take	0
+care	0
+of	0
+your	0
+elderly	0
+parents	0
+
+Checkr	0
+may	0
+be	0
+the	0
+big	0
+winner	0
+of	0
+the	0
+gig	0
+economy	0
+
+Gusto	B-ORG
+solves	0
+the	0
+payroll	0
+and	0
+benefits	0
+problems	0
+for	0
+small	0
+businesses	0
+
+Slack	B-ORG
+is	0
+doing	0
+away	0
+with	0
+email	0
+and	0
+changing	0
+how	0
+we	0
+work	0
+
+AltSchool	B-ORG
+wants	0
+to	0
+change	0
+the	0
+education	0
+system	0
+
+Navdy	B-ORG
+will	0
+change	0
+how	0
+you	0
+drive	0
+
+In	0
+a	0
+key	0
+election	0
+year	0
+Brigade	B-ORG
+rallies	0
+people	0
+to	0
+vote	0
+
+After	B-ORG
+School	I-ORG
+is	0
+an	0
+anonymous	0
+app	0
+teens	0
+are	0
+obsessed	0
+with	0
+
+21	0
+could	0
+change	0
+how	0
+payments	0
+work	0
+on	0
+the	0
+internet	0
+
+Chariot	B-ORG
+wants	0
+to	0
+crowdsource	0
+a	0
+new	0
+way	0
+to	0
+commute	0
+
+Workflow	B-ORG
+makes	0
+complicated	0
+tasks	0
+on	0
+your	0
+phone	0
+as	0
+easy	0
+as	0
+an	0
+app	0
+
+Lever	B-ORG
+already	0
+powers	0
+hiring	0
+for	0
+many	0
+Silicon	B-LOC
+Valley	I-LOC
+companies	0
+and	0
+wants	0
+to	0
+make	0
+it	0
+easy	0
+for	0
+the	0
+world	0
+
+Product	B-ORG
+Hunt	I-ORG
+discovers	0
+the	0
+newest	0
+and	0
+best	0
+products	0
+
+Gigster	B-ORG
+lets	0
+top	0
+programmers	0
+work	0
+how	0
+they	0
+want	0
+when	0
+they	0
+want	0
+
+HackerOne	B-ORG
+turns	0
+hackers	0
+into	0
+help	0
+that	0
+makes	0
+companies	0
+secure	0
+
+Shyp	B-ORG
+makes	0
+mailing	0
+packages	0
+painless	0
+
+Eero	B-ORG
+wants	0
+to	0
+make	0
+Wi-Fi	0
+less	0
+of	0
+a	0
+pain	0
+
+Eaze	B-ORG
+makes	0
+it	0
+easy	0
+to	0
+get	0
+a	0
+prescription	0
+and	0
+a	0
+delivery	0
+of	0
+medical	0
+marijuana	0
+
+Postmates	B-ORG
+lets	0
+you	0
+order	0
+almost	0
+anything	0
+and	0
+have	0
+it	0
+delivered	0
+to	0
+your	0
+door	0
+in	0
+under	0
+an	0
+hour	0
+
+Sano	B-ORG
+Intelligence	I-ORG
+wants	0
+to	0
+eliminate	0
+the	0
+finger	0
+prick	0
+
+Medium	B-ORG
+wants	0
+to	0
+make	0
+publishing	0
+accessible	0
+to	0
+everyone	0
+
+6SensorLabs	B-ORG
+makes	0
+a	0
+portable	0
+gluten	0
+tester	0
+to	0
+make	0
+sure	0
+people	0
+know	0
+what	0
+s	0
+in	0
+their	0
+food	0
+
+Shift	B-ORG
+wants	0
+to	0
+become	0
+the	0
+largest	0
+car	0
+company	0
+in	0
+the	0
+US	0
+without	0
+owning	0
+a	0
+single	0
+vehicle	0
+
+Operator	B-ORG
+makes	0
+it	0
+easy	0
+to	0
+find	0
+anything	0
+you	0
+need	0
+
+Juicero	B-ORG
+is	0
+the	0
+future	0
+of	0
+juice	0
+or	0
+so	0
+Silicon	B-LOC
+Valley	I-LOC
+believes	0
+
+51	0
+enterprise	0
+startups	0
+to	0
+bet	0
+your	0
+career	0
+on	0
+in	0
+2017	0
+
+Skymind	B-ORG
+Silicon	B-LOC
+Valley	I-LOC
+s	0
+bet	0
+on	0
+artificial	0
+intelligence	0
+
+Pivotal	B-ORG
+Helping	0
+big	0
+companies	0
+act	0
+like	0
+little	0
+companies	0
+
+GitLab	B-ORG
+A	0
+programmer	0
+s	0
+secret	0
+weapon	0
+
+CoreOS	B-ORG
+Google	B-ORG
+s	0
+big	0
+bet	0
+on	0
+improving	0
+cloud	0
+computing	0
+
+Nginx	B-ORG
+Secretly	0
+running	0
+the	0
+internet	0
+
+Canva	B-ORG
+The	0
+Microsoft	B-ORG
+Office	0
+challenger	0
+from	0
+down	0
+under	0
+
+Mesosphere	B-ORG
+Bringing	0
+an	0
+operating	0
+system	0
+to	0
+data	0
+centers	0
+
+Datadog	B-ORG
+Helping	0
+developers	0
+keep	0
+an	0
+eye	0
+on	0
+their	0
+apps	0
+
+HackerRank	B-ORG
+Fixing	0
+the	0
+job	0
+interview	0
+process	0
+for	0
+programmers	0
+
+CodeFights	B-ORG
+Like	0
+Fight	0
+Club	0
+for	0
+programmers	0
+
+Backblaze	B-ORG
+A	0
+new	0
+challenger	0
+to	0
+Amazon	B-ORG
+
+LitBit	B-ORG
+Reinventing	0
+the	0
+data	0
+center	0
+
+Neo	B-ORG
+Technology	I-ORG
+Reinventing	0
+the	0
+database	0
+
+Slack	B-ORG
+The	0
+fastest-growing	0
+enterprise	0
+app	0
+
+HashiCorp	B-ORG
+Turning	0
+programmers	0
+into	0
+digital	0
+nomads	0
+
+Lever	B-ORG
+Solving	0
+the	0
+talent	0
+crunch	0
+
+Wavefront	B-ORG
+Making	0
+things	0
+simpler	0
+for	0
+software	0
+developers	0
+
+Turbonomic	B-ORG
+Turning	0
+an	0
+established	0
+market	0
+on	0
+its	0
+head	0
+
+SnapRoute	B-ORG
+Apple	B-ORG
+s	0
+secret	0
+sauce	0
+for	0
+reliable	0
+networks	0
+
+ThousandEyes	B-ORG
+Watching	0
+the	0
+internet	0
+for	0
+signs	0
+of	0
+trouble	0
+
+MapR	B-ORG
+Successfully	0
+selling	0
+big	0
+data	0
+software	0
+the	0
+old-fashioned	0
+way	0
+
+HackerOne	B-ORG
+Harnessing	0
+hackers	0
+for	0
+good	0
+not	0
+evil	0
+
+Revel	B-ORG
+Systems	I-ORG
+Turning	0
+iPads	0
+into	0
+cash	0
+registers	0
+
+Freshdesk	B-ORG
+Affordable	0
+customer	0
+service	0
+for	0
+all	0
+
+Qualtrics	B-ORG
+An	0
+IPO-bound	0
+market	0
+research	0
+company	0
+
+Gusto	B-ORG
+Warm	0
+and	0
+fuzzy	0
+HR	0
+software	0
+for	0
+small	0
+businesses	0
+
+ScienceLogic	B-ORG
+Watching	0
+the	0
+cloud	0
+to	0
+100	0
+million-plus	0
+in	0
+revenue	0
+
+Cylance	B-ORG
+Artificial	0
+intelligence	0
+to	0
+outsmart	0
+hackers	0
+
+Invincea	0
+A	0
+superfast	0
+way	0
+to	0
+stop	0
+ransomware	0
+
+Jamf	B-ORG
+Helping	0
+IT	0
+pros	0
+manage	0
+Apple	B-ORG
+
+Particle	B-ORG
+Serving	0
+70	0
+000	0
+IoT	0
+engineers	0
+and	0
+growing	0
+
+Cloudflare	B-ORG
+Making	0
+the	0
+internet	0
+safer	0
+and	0
+faster	0
+
+Barefoot	B-ORG
+Networks	I-ORG
+Programmable	0
+chips	0
+that	0
+could	0
+change	0
+the	0
+IT	0
+industry	0
+
+Instart	B-ORG
+Logic	I-ORG
+Making	0
+apps	0
+run	0
+faster	0
+
+Stripe	B-ORG
+The	0
+most	0
+valuable	0
+fintech	0
+startup	0
+
+Infer	B-ORG
+Making	0
+sales	0
+more	0
+predictable	0
+
+Boomerang	I-ORG
+Commerce	I-ORG
+Bringing	0
+data	0
+to	0
+retailers	0
+
+SendGrid	B-ORG
+Emailing	0
+its	0
+way	0
+to	0
+an	0
+IPO	0
+
+MailChimp	B-ORG
+Building	0
+a	0
+400	0
+million	0
+business	0
+
+App	B-ORG
+Annie	I-ORG
+Helping	0
+app-makers	0
+grow	0
+their	0
+businesses	0
+
+InsideSales	B-ORG
+Finding	0
+the	0
+best	0
+way	0
+to	0
+sell	0
+
+Apttus	B-ORG
+Simplifying	0
+the	0
+sales	0
+process	0
+
+Asana	0
+An	0
+easy	0
+way	0
+to	0
+track	0
+everyone	0
+s	0
+work	0
+
+Gainsight	B-ORG
+Getting	0
+the	0
+most	0
+out	0
+of	0
+your	0
+customers	0
+
+Rubrik	B-ORG
+Helping	0
+companies	0
+back	0
+up	0
+and	0
+recover	0
+data	0
+easily	0
+
+BlueVine	B-ORG
+Giving	0
+small	0
+businesses	0
+access	0
+to	0
+cash	0
+
+Envoy	B-ORG
+Killing	0
+the	0
+lobby	0
+sign-in	0
+book	0
+
+Front	B-ORG
+Fixing	0
+group	0
+email	0
+inboxes	0
+
+BetterWorks	B-ORG
+Making	0
+it	0
+easy	0
+to	0
+set	0
+and	0
+manage	0
+goals	0
+
+Everwise	B-ORG
+Providing	0
+mentorship	0
+and	0
+career	0
+development	0
+resources	0
+
+Adyen	B-ORG
+An	0
+easy	0
+payments	0
+solution	0
+to	0
+help	0
+companies	0
+get	0
+paid	0
+
+The	0
+top	0
+17	0
+startups	0
+to	0
+launch	0
+so	0
+far	0
+in	0
+2016	0
+
+Starry	B-ORG
+is	0
+making	0
+more	0
+powerful	0
+Wi-Fi	0
+for	0
+your	0
+house	0
+
+Juicero	B-ORG
+wants	0
+to	0
+make	0
+the	0
+freshest	0
+juice	0
+you	0
+ve	0
+ever	0
+tasted	0
+
+Cheddar	B-ORG
+is	0
+betting	0
+it	0
+can	0
+be	0
+the	0
+new	0
+CNBC	B-ORG
+for	0
+millennials	0
+
+Grail	B-ORG
+wants	0
+to	0
+develop	0
+a	0
+test	0
+for	0
+cancer	0
+at	0
+the	0
+earliest	0
+possible	0
+stage	0
+
+Juno	B-ORG
+wants	0
+to	0
+be	0
+a	0
+driver-friendly	0
+alternative	0
+to	0
+Uber	B-ORG
+
+Otto	B-ORG
+s	0
+self-driving	0
+trucks	0
+could	0
+revolutionize	0
+the	0
+industry	0
+
+Simple	B-ORG
+Habit	I-ORG
+wants	0
+to	0
+help	0
+stressed-out	0
+millennials	0
+
+Comparably	B-ORG
+can	0
+show	0
+you	0
+how	0
+much	0
+you	0
+re	0
+being	0
+paid	0
+compared	0
+with	0
+your	0
+peers	0
+
+Zipline	B-ORG
+s	0
+drones	0
+parachute	0
+blood	0
+and	0
+medicine	0
+to	0
+remote	0
+Rwandan	B-LOC
+cities	0
+
+Nanit	B-ORG
+is	0
+a	0
+superpowered	0
+baby	0
+monitor	0
+
+Truebill	B-ORG
+wants	0
+to	0
+stop	0
+you	0
+from	0
+getting	0
+ripped	0
+off	0
+on	0
+subscriptions	0
+
+Winnie	B-ORG
+wants	0
+to	0
+be	0
+the	0
+Yelp	0
+for	0
+parents	0
+
+Ritual	B-ORG
+is	0
+making	0
+a	0
+better	0
+vitamin	0
+
+Recharge	B-ORG
+lets	0
+you	0
+rent	0
+hotel	0
+rooms	0
+by	0
+the	0
+minute	0
+for	0
+whenever	0
+you	0
+need	0
+a	0
+rest	0
+
+Lola	B-ORG
+is	0
+a	0
+new	0
+kind	0
+of	0
+a	0
+travel	0
+agent	0
+
+Pearl	B-ORG
+will	0
+help	0
+turn	0
+your	0
+dumb	0
+car	0
+into	0
+a	0
+cutting-edge	0
+model	0
+
+KnuEdge	B-ORG
+wants	0
+to	0
+one-up	0
+Google	B-ORG
+and	0
+Intel	B-ORG
+
+50	0
+enterprise	0
+startups	0
+to	0
+bet	0
+your	0
+career	0
+on	0
+in	0
+2016	0
+
+Docker	B-ORG
+inventing	0
+a	0
+whole	0
+new	0
+industry	0
+
+Cloudera	B-ORG
+big-data	0
+software	0
+that	0
+enterprises	0
+love	0
+
+Nutanix	B-ORG
+upending	0
+the	0
+way	0
+people	0
+buy	0
+data-center	0
+hardware	0
+
+Docusign	B-ORG
+replacing	0
+paper	0
+signatures	0
+
+Mirantis	B-ORG
+cloud-operating-system	0
+giant	0
+
+Zuora	B-ORG
+billing	0
+customers	0
+in	0
+the	0
+cloud-computing	0
+era	0
+
+Tenable	B-ORG
+breaking	0
+a	0
+record	0
+for	0
+funding	0
+
+Okta	B-ORG
+passwords	0
+and	0
+security	0
+in	0
+the	0
+cloud-computing	0
+era	0
+
+Slack	0
+the	0
+fastest-growing	0
+enterprise	0
+app	0
+ever	0
+
+GitHub	B-ORG
+the	0
+must-use	0
+site	0
+for	0
+software	0
+developers	0
+
+Databricks	B-ORG
+keepers	0
+of	0
+one	0
+of	0
+the	0
+most	0
+important	0
+projects	0
+of	0
+the	0
+decade	0
+
+Checkmarx	B-ORG
+helping	0
+developers	0
+write	0
+safer	0
+more	0
+secure	0
+apps	0
+
+Illumio	0
+protecting	0
+data	0
+even	0
+if	0
+a	0
+hacker	0
+breaks	0
+in	0
+
+MuleSoft	B-ORG
+disrupting	0
+the	0
+big	0
+guys	0
+
+Blue	B-ORG
+Jeans	I-ORG
+Network	I-ORG
+making	0
+online	0
+videoconferencing	0
+easy	0
+
+Qualtrics	B-ORG
+cloud-survey	0
+platform	0
+for	0
+businesses	0
+
+Insidesales	B-ORG
+predictive	0
+engine	0
+for	0
+sales	0
+people	0
+
+Tanium	B-ORG
+detecting	0
+hackers	0
+the	0
+minute	0
+they	0
+attack	0
+
+Optimizely	B-ORG
+making	0
+service	0
+optimization	0
+easy	0
+
+Xamarin	B-ORG
+enterprise	0
+mobile	0
+apps	0
+made	0
+easy	0
+
+CloudFlare	B-ORG
+the	0
+internet	0
+s	0
+digital	0
+bouncer	0
+
+Apttus	B-ORG
+simplifying	0
+the	0
+sales-quoting	0
+process	0
+
+Stripe	B-ORG
+the	0
+invisible	0
+company	0
+powering	0
+online	0
+payments	0
+
+Gainsight	B-ORG
+letting	0
+businesses	0
+know	0
+their	0
+customers	0
+better	0
+
+Adaptive	B-ORG
+Insights	I-ORG
+replacing	0
+Excel	0
+spreadsheets	0
+
+DigitalOcean	B-ORG
+winning	0
+against	0
+Amazon	B-ORG
+Web	I-ORG
+Services	I-ORG
+
+Tidemark	B-ORG
+making	0
+sense	0
+of	0
+mountains	0
+of	0
+data	0
+
+Sprinklr	B-ORG
+helping	0
+businesses	0
+with	0
+their	0
+social	0
+media	0
+
+AppAnnie	B-ORG
+taking	0
+app	0
+analytics	0
+to	0
+the	0
+next	0
+level	0
+
+Tintri	B-ORG
+making	0
+storage	0
+faster	0
+for	0
+big	0
+enterprises	0
+
+Udacity	B-ORG
+helping	0
+anyone	0
+become	0
+a	0
+programmer	0
+
+Bracket	B-ORG
+helps	0
+enterprises	0
+use	0
+multiple	0
+clouds	0
+
+Qumulo	B-ORG
+bringing	0
+big	0
+data	0
+under	0
+control	0
+
+Hedvig	B-ORG
+famous	0
+Facebook	B-ORG
+database	0
+inventor	0
+taking	0
+on	0
+storage	0
+
+Cumulus	B-ORG
+Networks	I-ORG
+changing	0
+the	0
+computer-network	0
+industry	0
+
+CrowdStrike	B-ORG
+providing	0
+businesses	0
+much	0
+smarter	0
+security	0
+
+6sense	B-ORG
+predicting	0
+who	0
+wants	0
+to	0
+buy	0
+your	0
+products	0
+with	0
+amazing	0
+accuracy	0
+
+Confluent	B-ORG
+big	0
+data	0
+decisions	0
+in	0
+real	0
+time	0
+
+Interana	B-ORG
+doing	0
+for	0
+data	0
+what	0
+Facebook	B-ORG
+did	0
+for	0
+friendships	0
+
+Twillo	B-ORG
+the	0
+secret	0
+API	0
+powering	0
+app	0
+communications	0
+
+MixPanel	B-ORG
+finding	0
+engagement	0
+metrics	0
+
+Payoneer	B-ORG
+international	0
+payments	0
+for	0
+small	0
+businesses	0
+made	0
+easy	0
+
+Stack	B-ORG
+Exchange	I-ORG
+where	0
+the	0
+experts	0
+go	0
+for	0
+help	0
+
+SimilarWeb	B-ORG
+
+Mesosphere	B-ORG
+bringing	0
+an	0
+operating	0
+system	0
+to	0
+data	0
+centers	0
+
+HackerOne	B-ORG
+the	0
+neighborhood	0
+watch	0
+for	0
+software	0
+
+Realm	B-ORG
+
+CoreOS	B-ORG
+a	0
+powerful	0
+competitor	0
+to	0
+Docker	0
+
+AtScale	B-ORG
+making	0
+big	0
+data	0
+easier	0
+to	0
+use	0
+
+GitLab	B-ORG
+helping	0
+programmers	0
+work	0
+together	0
+
+The	0
+27	0
+best	0
+startups	0
+that	0
+launched	0
+this	0
+year	0
+
+Grail	B-ORG
+wants	0
+to	0
+develop	0
+a	0
+test	0
+for	0
+cancer	0
+at	0
+the	0
+earliest	0
+possible	0
+stage	0
+
+Allbirds	B-ORG
+invented	0
+an	0
+all-wool	0
+shoe	0
+that	0
+has	0
+quickly	0
+become	0
+a	0
+cult	0
+favorite	0
+in	0
+tech	0
+
+Lemonade	B-ORG
+is	0
+selling	0
+you	0
+insurance	0
+in	0
+a	0
+whole	0
+new	0
+way	0
+
+Houseparty	B-ORG
+is	0
+a	0
+group	0
+video	0
+chat	0
+app	0
+that	0
+has	0
+taken	0
+off	0
+among	0
+teens	0
+
+Zipline	B-ORG
+s	0
+drones	0
+parachute	0
+blood	0
+and	0
+medicine	0
+to	0
+remote	0
+Rwandan	B-LOC
+cities	0
+
+Thrive	B-ORG
+Global	I-ORG
+is	0
+a	0
+new	0
+startup	0
+from	0
+Arianna	B-PER
+Huffington	I-PER
+about	0
+living	0
+healthy	0
+
+Cheddar	B-ORG
+is	0
+betting	0
+it	0
+can	0
+be	0
+the	0
+new	0
+CNBC	B-ORG
+for	0
+millennials	0
+
+Pearl	B-ORG
+will	0
+help	0
+turn	0
+your	0
+dumb	0
+car	0
+into	0
+a	0
+cutting-edge	0
+model	0
+
+Heptio	B-ORG
+wants	0
+to	0
+take	0
+Kubernetes	B-ORG
+mainstream	0
+
+Lola	B-ORG
+is	0
+a	0
+new	0
+kind	0
+of	0
+a	0
+travel	0
+agent	0
+
+Gladly	B-ORG
+is	0
+the	0
+next	0
+generation	0
+of	0
+customer	0
+service	0
+software	0
+
+Winnie	B-ORG
+wants	0
+to	0
+be	0
+the	0
+Yelp	0
+for	0
+parents	0
+
+KnuEdge	B-ORG
+wants	0
+to	0
+one-up	0
+Google	B-ORG
+and	0
+Intel	B-ORG
+
+Modsy	B-ORG
+lets	0
+you	0
+see	0
+furniture	0
+in	0
+your	0
+home	0
+before	0
+you	0
+buy	0
+it	0
+
+Away	B-ORG
+has	0
+developed	0
+a	0
+cult	0
+following	0
+for	0
+its	0
+luggage	0
+
+Remedy	B-ORG
+helps	0
+people	0
+from	0
+paying	0
+too	0
+much	0
+in	0
+medical	0
+bills	0
+
+Juno	B-ORG
+wants	0
+to	0
+be	0
+a	0
+driver-friendly	0
+alternative	0
+to	0
+Uber	B-ORG
+
+Accompany	B-ORG
+gives	0
+everyone	0
+a	0
+chief	0
+of	0
+staff	0
+
+Nucleus	B-ORG
+is	0
+reinventing	0
+the	0
+intercom	0
+
+Comparably	B-ORG
+can	0
+show	0
+you	0
+how	0
+much	0
+you	0
+re	0
+being	0
+paid	0
+compared	0
+with	0
+your	0
+peers	0
+
+Nanit	B-ORG
+is	0
+a	0
+superpowered	0
+baby	0
+monitor	0
+
+Truebill	B-ORG
+wants	0
+to	0
+stop	0
+you	0
+from	0
+getting	0
+ripped	0
+off	0
+on	0
+subscriptions	0
+
+Simple	B-ORG
+Habit	I-ORG
+wants	0
+to	0
+help	0
+stressed-out	0
+millennials	0
+
+Ritual	0
+is	0
+making	0
+a	0
+better	0
+vitamin	0
+
+Juicero	B-ORG
+wants	0
+to	0
+make	0
+the	0
+freshest	0
+juice	0
+you	0
+ve	0
+ever	0
+tasted	0
+
+Recharge	B-ORG
+lets	0
+you	0
+rent	0
+hotel	0
+rooms	0
+by	0
+the	0
+minute	0
+for	0
+whenever	0
+you	0
+need	0
+a	0
+rest	0
+
+Starry	B-ORG
+is	0
+making	0
+more	0
+powerful	0
+Wi-Fi	0
+for	0
+your	0
+house	0
+
+The	0
+38	0
+most	0
+valuable	0
+enterprise	0
+startups	0
+of	0
+2016	0
+
+Yieldbot	B-ORG
+95.79	0
+million	0
+for	0
+online	0
+ads	0
+
+Skycatch	B-ORG
+96	0
+million	0
+for	0
+photo	0
+drones	0
+
+Invoca	B-ORG
+100	0
+million	0
+for	0
+marketing	0
+software	0
+
+Periscope	B-ORG
+Data	I-ORG
+100	0
+million	0
+for	0
+fast	0
+big	0
+data	0
+
+Engagio	B-ORG
+100	0
+million	0
+to	0
+ease	0
+the	0
+sales	0
+pipeline	0
+
+Paxata	B-ORG
+108.82	0
+million	0
+for	0
+easier	0
+big	0
+data	0
+projects	0
+
+Princeton	B-ORG
+Identity	I-ORG
+117.65	0
+million	0
+for	0
+extreme	0
+security	0
+
+SmartRecruiters	B-ORG
+118.1	0
+million	0
+for	0
+improved	0
+recruiting	0
+
+Virool	B-ORG
+127.3	0
+million	0
+for	0
+video	0
+ads	0
+
+Leanplum	B-ORG
+127.36	0
+million	0
+for	0
+optimization	0
+testing	0
+
+PlaceIQ	B-ORG
+133.64	0
+million	0
+for	0
+mobile	0
+ads	0
+
+Desktop	B-ORG
+Metal	I-ORG
+134	0
+million	0
+for	0
+3D	0
+printing	0
+with	0
+metal	0
+
+Euclid	B-ORG
+Analytics	I-ORG
+140.84	0
+million	0
+for	0
+retail	0
+sensors	0
+
+Progyny	B-ORG
+142.22	0
+million	0
+for	0
+fertility	0
+treatment	0
+option	0
+
+Ensighten	B-ORG
+158.19	0
+million	0
+for	0
+optimal	0
+marketing	0
+campaigns	0
+
+Curalate	B-ORG
+168.1	0
+million	0
+for	0
+recognizing	0
+images	0
+
+SessionM	B-ORG
+168.24	0
+million	0
+for	0
+mobile	0
+loyalty	0
+programs	0
+
+Drawbridge	B-ORG
+175	0
+million	0
+for	0
+targeting	0
+mobile	0
+ads	0
+
+Nanotronics	B-ORG
+Imaging	I-ORG
+176.61	0
+million	0
+for	0
+powerful	0
+microscopes	0
+
+Datorama	B-ORG
+178.35	0
+million	0
+for	0
+sharing	0
+marketing	0
+data	0
+
+Justworks	B-ORG
+183.01	0
+million	0
+for	0
+cloud	0
+HR	0
+software	0
+
+Clarabridge	B-ORG
+208.65	0
+million	0
+for	0
+better	0
+customer	0
+support	0
+
+Enlighted	B-ORG
+214.14	0
+million	0
+for	0
+smart	0
+commercial	0
+lighting	0
+
+Namely	B-ORG
+250.64	0
+million	0
+for	0
+online	0
+HR	0
+software	0
+
+Taulia	B-ORG
+272.98	0
+million	0
+for	0
+corporate	0
+procurement	0
+
+Checkr	B-ORG
+275	0
+million	0
+for	0
+background	0
+checks	0
+
+Tapjoy	B-ORG
+277.54	0
+million	0
+for	0
+mobile	0
+app	0
+ads	0
+
+Phononic	B-ORG
+284	0
+million	0
+for	0
+sophisticated	0
+cooling	0
+systems	0
+
+Spredfast	B-ORG
+331.68	0
+million	0
+for	0
+social	0
+media	0
+management	0
+
+Jana	B-ORG
+388.2	0
+million	0
+for	0
+advertising	0
+sponsored	0
+internet	0
+access	0
+
+DataXu	B-ORG
+390.04	0
+million	0
+for	0
+ad	0
+buying	0
+
+Hired	B-ORG
+490	0
+million	0
+for	0
+recruiting	0
+tech	0
+employees	0
+
+Asana	B-ORG
+600	0
+million	0
+for	0
+project	0
+management	0
+for	0
+teams	0
+
+Carbon	B-ORG
+1.08	0
+billion	0
+for	0
+sophisticated	0
+fast	0
+3D	0
+printing	0
+
+Gusto	B-ORG
+1.09	0
+billion	0
+for	0
+HR	0
+apps	0
+for	0
+small	0
+business	0
+
+Apttus	B-ORG
+1.59	0
+billion	0
+for	0
+quote-to-cash	0
+
+AppNexus	B-ORG
+1.6	0
+billion	0
+for	0
+internet	0
+ads	0
+
+Sprinklr	B-ORG
+1.8	0
+billion	0
+for	0
+social	0
+media	0
+management	0
+
+10	0
+Fastest	0
+Growing	0
+Software	0
+Companies	0
+2016	0
+
+YOU	0
+MIGHT	0
+ALSO	0
+LIKE	0
+
+ENROLL	0
+FOR	0
+UPCOMING	0
+ISSUE	0
+
+Startups	0
+

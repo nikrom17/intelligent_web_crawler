@@ -1,0 +1,1519 @@
+This	0
+startup	0
+almost	0
+went	0
+bankrupt	0
+now	0
+it	0
+s	0
+one	0
+of	0
+Europe	0
+s	0
+fastest-growing	0
+companies	0
+
+Have	0
+a	0
+cookie	0
+
+Most	0
+popular	0
+
+Never	0
+miss	0
+out	0
+
+Latest	0
+
+Treat	0
+yourself	0
+
+Who	0
+are	0
+you	0
+
+Stay	0
+tuned	0
+
+Help	0
+us	0
+out	0
+
+Sections	0
+
+About	0
+TNW	B-ORG
+
+TNW	0
+Sites	0
+
+51	0
+enterprise	0
+startups	0
+to	0
+bet	0
+your	0
+career	0
+on	0
+in	0
+2018	0
+
+Zapier	B-ORG
+The	0
+plumbing	0
+that	0
+connects	0
+the	0
+internet	0
+
+Smyte	B-ORG
+Bringing	0
+Facebook	B-ORG
+s	0
+trust	0
+and	0
+safety	0
+features	0
+to	0
+a	0
+broader	0
+audience	0
+
+Fetch	B-ORG
+Robotics	I-ORG
+Creating	0
+the	0
+warehouse	0
+robots	0
+of	0
+tomorrow	0
+
+SnapRoute	B-ORG
+Tiny	0
+startup	0
+taking	0
+on	0
+the	0
+networking	0
+giants	0
+
+Kong	B-ORG
+Breaking	0
+up	0
+tech	0
+s	0
+big	0
+monoliths	0
+
+Shippo	B-ORG
+Helping	0
+ecommerce	0
+sites	0
+ship	0
+their	0
+products	0
+off	0
+
+Gigster	B-ORG
+Helping	0
+programmers	0
+find	0
+their	0
+next	0
+gig	0
+
+Heptio	B-ORG
+Spreading	0
+a	0
+better	0
+way	0
+to	0
+build	0
+software	0
+
+Ripcord	B-ORG
+Making	0
+gigantic	0
+paper-shredding	0
+and	0
+scanning	0
+robots	0
+
+NGINX	B-ORG
+Serving	0
+up	0
+the	0
+most	0
+popular	0
+websites	0
+
+G2	B-ORG
+Crowd	I-ORG
+Reviews	0
+for	0
+enterprise	0
+software	0
+
+GitLab	B-ORG
+Helping	0
+programmers	0
+work	0
+together	0
+
+Auth0	B-ORG
+Turning	0
+heads	0
+in	0
+Seattle	B-LOC
+by	0
+managing	0
+logins	0
+
+Skydio	B-ORG
+Guiding	0
+drones	0
+and	0
+flying	0
+high	0
+
+CrowdFlower	B-ORG
+At	0
+the	0
+intersection	0
+of	0
+smart	0
+machines	0
+and	0
+humans	0
+
+Outreach	B-ORG
+A	0
+fast	0
+10	0
+million	0
+in	0
+revenue	0
+
+Stack	B-ORG
+Overflow	I-ORG
+Helping	0
+programmers	0
+help	0
+themselves	0
+
+Rigetti	B-ORG
+Computing	I-ORG
+Taking	0
+on	0
+the	0
+giants	0
+in	0
+quantum	0
+computing	0
+
+Lever	B-ORG
+Helping	0
+companies	0
+hire	0
+the	0
+right	0
+people	0
+at	0
+the	0
+right	0
+time	0
+
+HackerOne	B-ORG
+Paying	0
+hackers	0
+to	0
+do	0
+good	0
+not	0
+evil	0
+
+Convoy	B-ORG
+Taking	0
+on	0
+shipping	0
+with	0
+a	0
+who	0
+s	0
+who	0
+of	0
+billionaires	0
+
+Segment	B-ORG
+Competing	0
+with	0
+Salesforce	B-ORG
+with	0
+the	0
+blessing	0
+of	0
+Twitter	B-ORG
+s	0
+former	0
+COO	0
+
+Skytap	B-ORG
+Prepping	0
+for	0
+its	0
+IPO	0
+while	0
+fighting	0
+off	0
+competition	0
+from	0
+AWS	B-ORG
+
+Smartsheet	B-ORG
+Inching	0
+toward	0
+unicorn	0
+status	0
+one	0
+shared	0
+document	0
+at	0
+a	0
+time	0
+
+Mesosphere	B-ORG
+An	0
+operating	0
+system	0
+for	0
+the	0
+world	0
+s	0
+biggest	0
+systems	0
+
+Pindrop	B-ORG
+Security	0
+for	0
+the	0
+next	0
+big	0
+thing	0
+in	0
+computing	0
+
+C3	B-ORG
+IoT	I-ORG
+Hot	0
+tech	0
+and	0
+a	0
+famous	0
+CEO	0
+
+Zoom	B-ORG
+Simplifying	0
+video	0
+conferences	0
+for	0
+better	0
+meetings	0
+
+ThoughtSpot	B-ORG
+Making	0
+every	0
+employee	0
+the	0
+smartest	0
+person	0
+in	0
+the	0
+room	0
+
+Cohesity	B-ORG
+A	0
+second	0
+act	0
+for	0
+a	0
+successful	0
+founder	0
+
+Gusto	B-ORG
+Unicorn	0
+startup	0
+inching	0
+toward	0
+an	0
+IPO	0
+
+Cylance	B-ORG
+Using	0
+AI	0
+computers	0
+to	0
+out-think	0
+hackers	0
+
+Darktrace	B-ORG
+Merging	0
+AI	0
+and	0
+IoT	0
+for	0
+cybersecurity	0
+gold	0
+
+Cloudflare	B-ORG
+Gearing	0
+up	0
+to	0
+be	0
+IPO-ready	0
+in	0
+2018	0
+
+Coinbase	B-ORG
+Taking	0
+cryptocurrency	0
+trading	0
+mainstream	0
+
+Cybereason	B-ORG
+Stopping	0
+bad	0
+apples	0
+at	0
+the	0
+point	0
+of	0
+attack	0
+
+Snowflake	B-ORG
+Computing	I-ORG
+Former	0
+star	0
+Microsoftie	0
+tackles	0
+a	0
+database	0
+market	0
+
+Flexport	B-ORG
+Disrupting	0
+an	0
+ancient	0
+paper-based	0
+industry	0
+
+Plenty	B-ORG
+Agri-tech	0
+startup	0
+backed	0
+by	0
+a	0
+who	0
+s	0
+who	0
+in	0
+tech	0
+
+Docker	B-ORG
+Packing	0
+the	0
+internet	0
+into	0
+tiny	0
+boxes	0
+
+Bill.com	B-ORG
+Replacing	0
+paper	0
+checks	0
+once	0
+and	0
+for	0
+all	0
+
+Illumio	B-ORG
+An	0
+investor	0
+darling	0
+stopping	0
+hackers	0
+when	0
+they	0
+strike	0
+
+Skybox	B-ORG
+Security	I-ORG
+Turning	0
+heads	0
+with	0
+a	0
+150	0
+million	0
+round	0
+of	0
+investment	0
+
+CrowdStrike	B-ORG
+Stopping	0
+hackers	0
+in	0
+their	0
+tracks	0
+
+DigitalOcean	B-ORG
+A	0
+thorn	0
+in	0
+Amazon	0
+s	0
+side	0
+
+Zeta	B-ORG
+Global	I-ORG
+Helping	0
+companies	0
+retain	0
+their	0
+customers	0
+
+Qualtrics	B-ORG
+Data	I-ORG
+analysis	0
+powerhouse	0
+from	0
+Utah	0
+
+Stripe	0
+Helping	0
+businesses	0
+get	0
+off	0
+the	0
+ground	0
+all	0
+over	0
+the	0
+world	0
+
+AvidXchange	B-ORG
+Simplifying	0
+payments	0
+with	0
+the	0
+support	0
+of	0
+Mastercard	B-ORG
+
+Slack	B-ORG
+The	0
+fastest-growing	0
+enterprise	0
+app	0
+
+Pivotal	B-ORG
+Helping	0
+big	0
+companies	0
+do	0
+what	0
+Google	B-ORG
+does	0
+
+10	0
+of	0
+the	0
+most-funded	0
+startups	0
+to	0
+fail	0
+in	0
+2017	0
+
+5	0
+of	0
+the	0
+hottest	0
+cybersecurity	0
+startups	0
+to	0
+watch	0
+in	0
+2018	0
+
+Darktrace	B-ORG
+
+ThreatInformer	B-ORG
+
+Illumio	B-ORG
+
+Source	B-ORG
+Defense	I-ORG
+
+Attivo	B-ORG
+Networks	I-ORG
+
+Related	0
+News	0
+
+Latest	0
+in	0
+4th	0
+Revolution	0
+
+Latest	0
+in	0
+Analysis	0
+
+Favourites	0
+
+Latest	0
+News	0
+on	0
+CBR	0
+
+UK	B-LOC
+locked	0
+and	0
+loaded	0
+for	0
+cyber	0
+warfare	0
+as	0
+GCHQ	B-MISC
+doubles	0
+weapons	0
+
+Bitcoin	B-ORG
+exchange	0
+forced	0
+into	0
+bankruptcy	0
+by	0
+cyberattacks	0
+
+AI	0
+in	0
+2018	0
+Doctors	0
+defence	0
+and	0
+decision-making	0
+
+Modern	0
+Cloud	0
+How	0
+to	0
+Exit	0
+your	0
+Data	0
+Centre	0
+
+Eliminating	0
+Inequality	0
+Tech	0
+Talent	0
+Charter	0
+Tops	0
+200	0
+Signatures	0
+
+Game	0
+of	0
+Drones	0
+For	0
+Criminals	0
+and	0
+Corporate	0
+Spies	0
+the	0
+Sky	0
+s	0
+the	0
+Limit	0
+
+Majority	0
+of	0
+Banks	0
+Using	0
+AI	0
+Even	0
+Greater	0
+Majority	0
+Unsure	0
+How	0
+
+DSGVO	0
+F	0
+nf	0
+Lektionen	0
+basierend	0
+auf	0
+der	0
+Compliance-Erfahrung	0
+von	0
+Veeam	0
+
+RGPD	0
+5	0
+le	0
+ons	0
+apprises	0
+L	0
+exp	0
+rience	0
+de	0
+Veeam	0
+en	0
+mati	0
+re	0
+de	0
+conformit	0
+
+Energy	0
+Sector	0
+70	0
+Fear	0
+Hack	0
+Could	0
+Cause	0
+Explosion	0
+
+Closer	0
+To	0
+The	0
+Edge	0
+
+Tech	0
+Giants	0
+We	0
+Won	0
+t	0
+Help	0
+Gov	0
+t	0
+Cyber	0
+Attacks	0
+
+Flurry	0
+of	0
+New	0
+Products	0
+Seeks	0
+to	0
+Spot	0
+Leaky	0
+Clouds	0
+
+AI	0
+A	0
+Powerful	0
+New	0
+Tool	0
+for	0
+Windows	B-ORG
+and	0
+Hackers	0
+
+Network	0
+Traffic	0
+Blindness	0
+is	0
+IT	0
+s	0
+Dirty	0
+Secret	0
+
+Russians	B-LOC
+in	0
+your	0
+Router	0
+Unprecedented	0
+Joint	0
+Technical	0
+Alert	0
+from	0
+UK	B-LOC
+and	0
+US	B-LOC
+Intelligence	0
+
+Silicon	B-LOC
+Valley	I-LOC
+Ploughs	0
+Record	0
+1B	0
+into	0
+UK	B-LOC
+s	0
+Golden	0
+Triangle	0
+Startups	0
+
+Another	0
+Breach	0
+Report	0
+Another	0
+Plea	0
+to	0
+Stop	0
+Clicking	0
+Spearphishing	0
+Links	0
+
+Technology	0
+is	0
+Driving	0
+Transport	0
+Into	0
+the	0
+21st	0
+Century	0
+
+Los	B-LOC
+Angeles	I-LOC
+startup	0
+guides	0
+
+Built	0
+in	0
+Chicago	B-LOC
+
+Get	0
+involved	0
+
+About	0
+
+Stay	0
+Connected	0
+
+Our	0
+communities	0
+
+253	0
+Startup	0
+Failure	0
+Post-Mortems	0
+
+The	0
+United	0
+States	0
+Of	0
+Tech	0
+Startups	0
+
+100	0
+Startups	0
+Using	0
+Artificial	0
+Intelligence	0
+To	0
+Transform	0
+Industries	0
+
+Google	0
+s	0
+Biggest	0
+Acquisitions	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+The	0
+Top	0
+20	0
+Reasons	0
+Startups	0
+Fail	0
+
+2018	0
+first	0
+update	0
+4	0
+17	0
+2018	0
+
+2017	0
+Third	0
+Update	0
+10	0
+31	0
+17	0
+
+2017	0
+Second	0
+Update	0
+6	0
+9	0
+17	0
+
+2017	0
+First	0
+Update	0
+2	0
+10	0
+17	0
+
+2016	0
+Third	0
+Update	0
+11	0
+8	0
+16	0
+
+2016	0
+Second	0
+Update	0
+7	0
+28	0
+2016	0
+
+2016	0
+First	0
+Update	0
+2	0
+15	0
+2016	0
+
+2015	0
+Second	0
+Update	0
+12	0
+3	0
+2015	0
+
+2015	0
+First	0
+Update	0
+8	0
+15	0
+2015	0
+
+2014	0
+Second	0
+Update	0
+9	0
+24	0
+2014	0
+
+2014	0
+First	0
+Update	0
+6	0
+3	0
+2014	0
+
+Original	0
+50	0
+Startup	0
+Post-Mortems	0
+Published	0
+January	0
+20	0
+2014	0
+
+The	0
+Top	0
+20	0
+Reasons	0
+Startups	0
+Fail	0
+
+TOP	0
+TECH	0
+TRENDS	0
+
+Related	0
+Research	0
+
+You	0
+might	0
+also	0
+like	0
+
+Popular	0
+Data	0
+Visualizations	0
+
+You	0
+might	0
+also	0
+like	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Here	0
+s	0
+A	0
+List	0
+Of	0
+40	0
+Bankruptcies	0
+In	0
+The	0
+Retail	0
+Apocalypse	0
+And	0
+Why	0
+They	0
+Failed	0
+
+The	0
+Retail	0
+Store	0
+Tech	0
+Market	0
+Map	0
+
+Nordstrom	B-ORG
+Innovates	0
+With	0
+E-Commerce	0
+And	0
+Retail	0
+Partnerships	0
+
+A	0
+timeline	0
+of	0
+retail	0
+bankruptcies	0
+
+Retail	0
+bankruptcies	0
+in	0
+2018	0
+
+Retail	0
+bankruptcies	0
+in	0
+2017	0
+
+Retail	0
+bankruptcies	0
+in	0
+2016	0
+
+Retail	0
+bankruptcies	0
+in	0
+2015	0
+
+Themes	0
+in	0
+the	0
+retailapocalypse	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Research	0
+BRIEFING	0
+Surviving	0
+the	0
+Retail	0
+Apocalypse	0
+
+Claire	0
+s	0
+
+The	B-ORG
+walking	B-ORG
+company	B-ORG
+
+Bon-ton	B-ORG
+
+KIKO	B-ORG
+USA	I-ORG
+
+A	B-ORG
+gaci	I-ORG
+
+CHARMING	B-ORG
+CHARLIE	I-ORG
+
+Styles	B-ORG
+For	I-ORG
+Less	I-ORG
+
+Toys	0
+R	0
+Us	0
+
+Aerosoles	B-ORG
+
+Vitamin	B-ORG
+World	I-ORG
+
+Perfumania	B-ORG
+
+Alfred	B-ORG
+Angelo	I-ORG
+
+True	B-ORG
+Religion	I-ORG
+Apparel	I-ORG
+Inc	I-ORG
+
+Papaya	B-ORG
+Clothing	I-ORG
+
+Gymboree	B-ORG
+
+Rue21	B-ORG
+
+Payless	B-ORG
+
+Gordmans	B-ORG
+
+Gander	B-ORG
+Mountain	I-ORG
+
+RadioShack	B-ORG
+
+HHGregg	B-ORG
+
+Vanity	B-ORG
+
+BCBG	B-ORG
+
+Eastern	B-ORG
+Outfitters	I-ORG
+
+Wet	B-ORG
+Seal	I-ORG
+
+The	B-ORG
+Limited	I-ORG
+
+american	B-ORG
+apparel	I-ORG
+
+aeropostale	B-ORG
+
+vestis	B-ORG
+retail	I-ORG
+group	I-ORG
+
+pacsun	B-ORG
+
+sports	B-ORG
+authority	I-ORG
+
+hancock	B-ORG
+fabrics	I-ORG
+
+Good	B-ORG
+Times	I-ORG
+Convenience	I-ORG
+Stores	I-ORG
+
+american	B-ORG
+apparel	I-ORG
+
+city	B-ORG
+sports	I-ORG
+
+Quiksilver	B-ORG
+
+GM	B-ORG
+pollack	I-ORG
+
+Great	B-ORG
+Atlantic	I-ORG
+Pacific	I-ORG
+Tea	I-ORG
+A	0
+P	0
+
+radioshack	B-ORG
+
+Wet	B-ORG
+Seal	I-ORG
+
+TOP	0
+TECH	0
+TRENDS	0
+
+Related	0
+Research	0
+
+You	0
+might	0
+also	0
+like	0
+
+Popular	0
+Data	0
+Visualizations	0
+
+You	0
+might	0
+also	0
+like	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+Where	0
+is	0
+this	0
+data	0
+coming	0
+from	0
+
+whoa	0
+there	0
+pardner	0
+
+Fashion	0
+Startups	0
+Aspire	0
+To	0
+Be	0
+The	0
+Anti-Bonobos	0
+
+NastyGal	B-ORG
+Bonobos	B-ORG
+were	0
+once	0
+the	0
+stuff	0
+of	0
+founders	0
+dreams	0
+But	0
+as	0
+we	0
+head	0
+into	0
+2018	0
+startups	0
+believe	0
+landing	0
+big	0
+funding	0
+scaling	0
+fast	0
+are	0
+recipes	0
+for	0
+disaster	0
+
+Generation	0
+1.0	0
+Flames	0
+Out	0
+
+For	0
+Generation	0
+2.0	0
+No	0
+More	0
+Easy	0
+Money	0
+
+The	0
+Vicious	0
+Cycle	0
+Of	0
+Fundraising	0
+
+Small	0
+But	0
+Mighty	0
+
+Video	0
+
+This	0
+Campaign	0
+Says	0
+Marriage	0
+Equality	0
+Doesn	0
+t	0
+End	0
+The	0
+Gay	0
+Rights	0
+Fight	0
+
+Digitizing	0
+Curbs	0
+Would	0
+Help	0
+AVs	0
+And	0
+Humans	0
+Navigate	0
+Our	0
+Cities	0
+
+The	0
+Yes	0
+Loitering	0
+Project	0
+Asks	0
+Kids	0
+Of	0
+Color	0
+To	0
+Rethink	0
+Public	0
+Space	0
+
+Cardi	B-PER
+B	I-PER
+is	0
+right	0
+Bernie	B-PER
+Sanders	I-PER
+
+New	B-LOC
+York	I-LOC
+Subways	0
+Are	0
+Trash	0
+But	0
+These	0
+David	B-PER
+Bowie	I-PER
+Metrocards	0
+Are	0
+Good	0
+
+BodyArmor	B-ORG
+Calls	0
+Out	0
+Gatorade	B-ORG
+For	0
+Being	0
+Your	0
+Dad	0
+s	0
+Sports	0
+Drink	0
+
+The	0
+Secret	0
+Life	0
+Of	0
+Hong	B-LOC
+Kong	I-LOC
+s	0
+Communal	0
+Rooftops	0
+
+An	0
+Unabashed	0
+Tribute	0
+To	0
+Books	0
+In	0
+A	0
+Relentlessly	0
+Digital	0
+Age	0
+
+Viz	B-ORG
+Palette	I-ORG
+The	0
+Ultimate	0
+Tool	0
+For	0
+Anyone	0
+Who	0
+Works	0
+With	0
+Color	0
+
+Amazon	B-ORG
+has	0
+sold	0
+Prime	0
+memberships	0
+to	0
+a	0
+hundred	0
+million	0
+of	0
+us	0
+
+Gimlet	B-ORG
+s	0
+latest	0
+podcast	0
+stars	0
+Kristen	B-PER
+Wiig	I-PER
+as	0
+a	0
+virtual	0
+assistant	0
+
+Cynthia	0
+Nixon	0
+er	0
+Governor	0
+Cuomo	0
+gives	0
+parolees	0
+the	0
+right	0
+to	0
+vote	0
+
+homepage	0
+
+technology	0
+
+leadership	0
+
+entertainment	0
+
+ideas	0
+
+video	0
+
+news	0
+
+homepage	0
+
+cities	0
+
+graphics	0
+
+innovation	0
+by	0
+design	0
+
+interactive	0
+
+products	0
+
+spaces	0
+
+Recommender	0
+
+Strong	0
+Female	0
+Lead	0
+
+Platform	0
+Wars	0
+
+Tech	0
+Forecast	0
+
+Most	0
+Innovative	0
+Companies	0
+
+Most	0
+Creative	0
+People	0
+
+World	0
+Changing	0
+Ideas	0
+
+Innovation	0
+By	0
+Design	0
+
+FastCo.Works	B-ORG
+Studio	I-ORG
+
+Ideas	0
+
+Entertainment	0
+
+Co.Design	0
+
+Fast	0
+Company	0
+
+About	0
+the	0
+author	0
+
+Xconomy	B-ORG
+San	B-LOC
+Francisco	I-LOC
+
+What	0
+Is	0
+Causing	0
+Startups	0
+to	0
+Go	0
+Bankrupt	0
+
+Shellye	B-PER
+Archambeau	I-PER
+
+More	0
+from	0
+Xconomy	B-ORG
+
+Trending	0
+on	0
+Xconomy	B-ORG
+
+Connect	0
+with	0
+Xconomy	B-ORG
+
+Xconomy	B-ORG
+on	0
+Demand	0
+
+Share	0
+
+Underwriters	0
+and	0
+Partners	0
+
