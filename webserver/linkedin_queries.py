@@ -13,29 +13,14 @@ def flatten(seq,container=None):
             container.append(s)
     return container
 
-def linkedin_api(query):
+def linkedin_api(query, start, chunk):
     application = linkedin.LinkedInApplication(token='AQVrwHpVM74WSg6DHVRzb6TLyNCR9drlq0f-LoLnkkT2OUmXrtnkW3PKdbvYc46vFI-ecvDNDGyDdsGH5RvD8G4ex_A2QbjS3oYwV0J37icRTqdvLarKy7PuP6inQNCCHMd2EfYY8-ure7JtAS9u8gWnMqgSN-e7pVpKxT_LyTL2NSvPxD25pF_pDNQz8y8Bkijnsl6CBZWZ9ivDO3pLDgKsgoegaLpgrHz2EFa52yAYo5FtKicnGVAx82vnFByy5BNq6DXfR84oPwSobwFQzywYZsbWyKJRlo9Yc9Ty656-18dVNer0Oy3P7YVRXd-F5kM25OpmS2nPHw7BGFreQ-EWrzrGEg')
 
     #Query fields: https://developer.linkedin.com/docs/fields/company-profile
     companies = []
-    chunk = 0;
-    while(chunk <= 60 or chunk > tmp_query["companies"]['_total']):
-        tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':20, 'start':chunk})
-        '''
-        print("count: " + str(query["companies"]['_count']))
-        print("start: " + str(query["companies"]['_start']))
-        print("total: " + str(query["companies"]['_total']))
-        for i in query["companies"]["values"]:
-            print(i["name"])
-            try:
-                print(i["specialties"])
-            except:
-                print("No specialties....LAME")
-            print("-------------------------------------------------------------------")
-            '''
-        for company in tmp_query["companies"]["values"]:
-            companies.append(dict(company))
-        chunk += 20 
+    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
+    for company in tmp_query["companies"]["values"]:
+        companies.append(dict(company))
     return sort_companies(companies, query)
 
 def sort_companies(companies, query):
