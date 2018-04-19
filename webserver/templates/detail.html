@@ -9,13 +9,16 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 </head>
 <body>
-	<div class="container-fluid">
-		<h1>{{compData.name}}</h1>
-		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=200" alt="{{compData.universalName}}">
+	<nav class="navbar nav-header navbar-dark bg-dark" justify-content-between">
+		<h1><a class="navbar-brand" href="/">Intelligent Web Scrapper</a></h1>
+		<h2 class="nav-item navbar-brand">{{compData.name}}</h2>
+	</nav>
+	<div class="container-fluid px-5 py-4">		
+		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=400" alt="{{compData.universalName}}" class="mx-auto d-block pb-4" />
 
 				
 		{% if compData.specialties %}
-		<h2>Product/ Services</h2>
+		<h3>Product/ Services</h3>
 		<p>
 			{% for specialty in compData.specialties["values"] %}				
 				{% if loop.last %}
@@ -32,7 +35,7 @@
 		{% endif %}	
 		
 		{% if compData.locations %}
-		<h2>Contact</h2>
+		<h3>Contact</h3>
 		<p>
 			{% for location in compData.locations["values"] %}				
 				{% if loop.last %}
@@ -44,19 +47,20 @@
 		</p>
 		{% endif %}		
 
-		<h2>Contact</h2>
+
+		<h3>Contact</h3>
 		<p>Contact Name:</p>
 		<p>Contact Designation</p>
 		
 		<a href="{{compData.websiteUrl}}" target="_blank">Go to website</a>
 		
-		<h2>Other Contacts</h2>
+		<h3>Other Contacts</h3>
 		<p>Facebook</p>
 		<p>Linkedin</p>
 		<p>twitter</p>
 		
 		{% if compData.locations %}
-		<h2>Location</h2>
+		<h3>Location</h3>
 		<p>
 			{% for location in compData.locations["values"] %}				
 				{% if loop.last %}
@@ -68,10 +72,10 @@
 		</p>
 		{% endif %}		
 		
-		<h2>Synopsis of Services</h2>
+		<h3>Synopsis of Services</h3>
 		<p>{{compData.description}}</p>
 		
-		<h2>Sources:</h2>
+		<h3>Sources:</h3>
 		<p>Source1</p>
 		<p>Source2</p>
 		<p>Source3</p>

@@ -4,8 +4,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
     $scope.callData = function($event){
         $event.preventDefault();
 
-        $scope.companies = {};
-        console.log($scope.currentPage);        
+        $scope.companies = {};     
         $http({
             method:'POST',
             url:'http://127.0.0.1:5000/iws/api/v1.0/companies',

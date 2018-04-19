@@ -18,6 +18,11 @@
   background-color: #292b2c;
  }
 
+ h2.navbar-brand
+ {
+  margin: 0;
+ }
+
 .sidebar {
   position: fixed;
   top: 51px;

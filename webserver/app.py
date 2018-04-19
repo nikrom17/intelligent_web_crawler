@@ -4,6 +4,7 @@ import re
 from linkedin import linkedin
 from linkedin_queries import linkedin_api
 import clearbit
+#from search_utils import scrape_url
 
 clearbit.key = 'sk_8abade9a563c4a0f41ae1362f0dc1f12'
 
@@ -46,10 +47,16 @@ def get_company(name):
 	comp = [query for query in query_data["data"] if query['universalName'] == name]
 	comp[0]["websiteUrl"] = ("http://" +comp[0]["websiteUrl"], comp[0]["websiteUrl"])[comp[0]["websiteUrl"].startswith('http')]
 	domain = re.split('^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)', comp[0]["websiteUrl"].lower())[1]
-	print(domain)
-	print("linkedin data:")
-	print(comp[0])
+	newLInk ='http://'+ domain
+	
+	#print(newLInk)
+	#phones,names, entities = scrape_url(newLInk)
+	#print(phones)
+	#print(names)
+	#print("linkedin data:")
+	#print(comp[0])
+	#return render_template('detail.html', compData = comp[0], modelData = {'phones':phones,'names':names,'entities':entities})
 	return render_template('detail.html', compData = comp[0])
-
+	
 if __name__ == "__main__":
     app.run()
