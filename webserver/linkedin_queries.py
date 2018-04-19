@@ -18,9 +18,23 @@ def linkedin_api(query, start, chunk):
 
     #Query fields: https://developer.linkedin.com/docs/fields/company-profile
     companies = []
-    tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'square-logo-url', 'universal-name', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
-    for company in tmp_query["companies"]["values"]:
-        companies.append(dict(company))
+    val = 0
+    total_chunk = chunk
+    while (val < total_chunk):
+        print(val)
+        try:
+            tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'square-logo-url', 'universal-name', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':chunk, 'start':start})
+            print(tmp_query)
+            val += chunk
+            start += chunk
+            for company in tmp_query["companies"]["values"]:
+                companies.append(dict(company))
+        except:
+            chunk -= 5
+            print(chunk)
+            if (chunk < 1):
+                chunk = 1
+
     return sort_companies(companies, query)
 
 def sort_companies(companies, query):
@@ -63,10 +77,10 @@ def sort_companies(companies, query):
     json.dumps(companies)
     return companies
 
-# def main():
-#     query = input("query: ")
-#     companies = linkedin_api(query)
-#     ranked_list = sort_companies(companies, query)
+def main():
+     query = input("query: ")
+     companies = linkedin_api(query, 0, 20)
+
 
     
 if __name__ == "__main__":
