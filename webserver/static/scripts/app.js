@@ -14,7 +14,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
             data: {'search':$scope.searchText}
         })
         .then(function(resp){
-            $scope.companies = resp.data.companies.values;
+            $scope.companies = resp.data;
             $cookies.put('cookie', $scope.searchText)
         },function(error){
             console.log(error);
@@ -35,7 +35,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
                 data: {'search':$cookies.get('cookie')}
             })
             .then(function(resp){
-                $scope.companies = resp.data.companies.values;
+                $scope.companies = resp.data;
             },function(error){
                 console.log(error);
             });

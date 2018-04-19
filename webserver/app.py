@@ -1,6 +1,7 @@
 from flask import Flask,render_template, jsonify, request
 from flask_cors import CORS
 from linkedin import linkedin
+from linkedin_queries import linkedin_api
 
 app = Flask(__name__,static_url_path='')
 CORS(app)
@@ -26,7 +27,7 @@ query_data = []
 @app.route('/iws/api/v1.0/companies', methods=['POST'])
 def get_tasks():
 	global query_data
-	query_data = get_query(request.get_json()["search"])
+	query_data = linkedin_api(request.get_json()["search"])
 	return jsonify(query_data)
 
 @app.route('/companies/<string:name>', methods=['GET'])

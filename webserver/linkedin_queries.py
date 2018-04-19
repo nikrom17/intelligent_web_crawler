@@ -19,8 +19,8 @@ def linkedin_api(query):
     #Query fields: https://developer.linkedin.com/docs/fields/company-profile
     companies = []
     chunk = 0;
-    while(chunk <= 60 or chunk > query["companies"]['_total']):
-        query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':20, 'start':chunk})
+    while(chunk <= 60 or chunk > tmp_query["companies"]['_total']):
+        tmp_query = application.search_company(selectors=[{'companies': ['name','website-url','industries', 'employee-count-range', 'specialties', 'locations', 'description','status']}], params={'keywords':query,'count':20, 'start':chunk})
         '''
         print("count: " + str(query["companies"]['_count']))
         print("start: " + str(query["companies"]['_start']))
@@ -33,15 +33,16 @@ def linkedin_api(query):
                 print("No specialties....LAME")
             print("-------------------------------------------------------------------")
             '''
-        for company in query["companies"]["values"]:
+        for company in tmp_query["companies"]["values"]:
             companies.append(dict(company))
         chunk += 20 
-    return companies
+    return sort_companies(companies, query)
 
 def sort_companies(companies, query):
     company_size = {'B':10, 'C':10,'D':10, 'E':5, 'F':0, 'G':-10, 'H':-20, 'I':-20}
     ranked_list = []
     ordered_list = []
+    print (query)
     parsed_query = re.split('[^0-9A-Za-z\.\-]|(?<!\w)[.]|[.](?!\w)', query)
     parsed_query = list(filter(None, parsed_query))
     print(companies[0])
@@ -77,10 +78,10 @@ def sort_companies(companies, query):
     json.dumps(companies)
     return companies
 
-def main():
-    query = input("query: ")
-    companies = linkedin_api(query)
-    ranked_list = sort_companies(companies, query)
+# def main():
+#     query = input("query: ")
+#     companies = linkedin_api(query)
+#     ranked_list = sort_companies(companies, query)
 
     
 if __name__ == "__main__":
