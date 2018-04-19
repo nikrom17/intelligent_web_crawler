@@ -18,6 +18,7 @@ QUERIES_DIR = os.path.join(DATA_DIR, 'queries')
 DATA_TRAIN = os.path.join(DATA_DIR, 'conll2003/en/ner')
 EMBEDDING_PATH = os.path.join(DATA_DIR, 'glove.6B/glove.6B.100d.txt')
 BASE_MODEL_PATH = os.path.join(SAVE_DIR, 'base_model')
+CUSTOM_MODEL_PATH = os.path.join(SAVE_DIR, 'custom_model')
 
 # Hyperparameters
 PATIENCE = 3
@@ -105,6 +106,7 @@ def train(log_dir: str) -> None:
     model = anago.Sequence(log_dir=LOG_DIR, embeddings=embeddings)
     model.load(BASE_MODEL_PATH)
     model.train(x_train, y_train, x_valid, y_valid)
+    model.save(CUSTOM_MODEL_PATH)
 
 
 @cli.command()
