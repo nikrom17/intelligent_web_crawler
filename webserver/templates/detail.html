@@ -11,25 +11,62 @@
 <body>
 	<div class="container-fluid">
 		<h1>{{compData.name}}</h1>
-		<img src="{{compData.squareLogoUrl}}" alt="{{compData.universalName}}">
+		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=200" alt="{{compData.universalName}}">
 
+				
+		{% if compData.specialties %}
 		<h2>Product/ Services</h2>
-		<p>{{compData.specialties}}</p>
+		<p>
+			{% for specialty in compData.specialties["values"] %}				
+				{% if loop.last %}
+					{{specialty}}
+				{% else %}
+					{{specialty}},
+				{% endif %}		   
+			{% endfor %}
+		</p>
+		{% endif %}	
+
+		{% if compData.employeeCountRange %}
+			<p>Employee Count: {{compData.employeeCountRange.name}}</p>
+		{% endif %}	
 		
+		{% if compData.locations %}
+		<h2>Contact</h2>
+		<p>
+			{% for location in compData.locations["values"] %}				
+				{% if loop.last %}
+					{{location.contactInfo.phone1}}
+				{% else %}
+					{{location.contactInfo.phone1}}
+				{% endif %}		   
+			{% endfor %}
+		</p>
+		{% endif %}		
+
 		<h2>Contact</h2>
 		<p>Contact Name:</p>
 		<p>Contact Designation</p>
-		<p>Contact Email</p>
-		<p>Phone!</p>
+		
 		<a href="{{compData.websiteUrl}}" target="_blank">Go to website</a>
 		
 		<h2>Other Contacts</h2>
 		<p>Facebook</p>
 		<p>Linkedin</p>
-		<p>Twitter</p>
+		<p>twitter</p>
 		
+		{% if compData.locations %}
 		<h2>Location</h2>
-		<p>{{compData.address}}</p>
+		<p>
+			{% for location in compData.locations["values"] %}				
+				{% if loop.last %}
+					{{location.address.street1}} {{location.address.city}} {{location.address.postalCode}} 
+				{% else %}
+					{{location.address.street1}} {{location.address.city}} {{location.address.postalCode}},
+				{% endif %}		   
+			{% endfor %}
+		</p>
+		{% endif %}		
 		
 		<h2>Synopsis of Services</h2>
 		<p>{{compData.description}}</p>

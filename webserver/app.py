@@ -1,7 +1,11 @@
 from flask import Flask,render_template, jsonify, request
 from flask_cors import CORS
+import re
 from linkedin import linkedin
 from linkedin_queries import linkedin_api
+import clearbit
+
+clearbit.key = 'sk_8abade9a563c4a0f41ae1362f0dc1f12'
 
 app = Flask(__name__,static_url_path='')
 CORS(app)
@@ -27,16 +31,24 @@ query_data = []
 @app.route('/iws/api/v1.0/companies', methods=['POST'])
 def get_tasks():
 	global query_data
-	query_data = linkedin_api(request.get_json()["search"], 0 , 15)
+	query_data = linkedin_api(request.get_json()["search"], request.get_json()["page"]*20, 20)
+	#for q in query_data:
+		#domain = re.split('^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)', q["websiteUrl"].lower())[1]
+		#print(domain)
+		# company = clearbit.Company.find(domain=domain, stream=True)
+		# if company != None:
+  #  			print (company["logo"])
 	return jsonify(query_data)
 
 @app.route('/companies/<string:name>', methods=['GET'])
 def get_company(name):
-	print(query_data[0])
-	comp = [query for query in query_data if query['universalName'] == name]
+	#print(query_data[0])
+	comp = [query for query in query_data["data"] if query['universalName'] == name]
 	comp[0]["websiteUrl"] = ("http://" +comp[0]["websiteUrl"], comp[0]["websiteUrl"])[comp[0]["websiteUrl"].startswith('http')]
-	print (comp[0]["locations"]["values"][0]["address"]["city"])
-	#comp[0]["address"] = comp[0]["locations"]["values"][0]["address"]["city"]
+	domain = re.split('^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)', comp[0]["websiteUrl"].lower())[1]
+	print(domain)
+	print("linkedin data:")
+	print(comp[0])
 	return render_template('detail.html', compData = comp[0])
 
 if __name__ == "__main__":

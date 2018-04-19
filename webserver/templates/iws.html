@@ -11,7 +11,7 @@
 </head>
 <body ng-app="myModule">
 	<div ng-controller="HomeCtrl" ng-init="checkCookie()">
-		<nav class="navbar navbar-dark bg-dark" justify-content-between">
+		<nav class="navbar nav-header navbar-dark bg-dark" justify-content-between">
 		  <h1><a class="navbar-brand" href="/">Intelligent Web Scrapper</a></h1>
 		  <form class="form-inline">
 		    <input class="form-control mr-sm-2" type="search" name="search-text" ng-model="searchText" placeholder="Search" aria-label="Search">
@@ -20,9 +20,9 @@
 		</nav>
 		<div class="container-fluid">	
 			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6 col-lg-4 col-xl-3 p-3" ng-repeat="comp in companies">
-					<div class="card">
-						<img class="card-img-top" src="{{ '{{comp.squareLogoUrl}}' }}" alt="Card image cap">
+				<div class="card-columns">
+					<div class="card" ng-repeat="comp in companies">
+						<img class="card-img-top" ng-src="https://logo.clearbit.com/{{ '{{comp.websiteUrl}}' }}?size=200" onerror="this.onerror=null" />
 					  	<div class="card-body">
 					  	  <h5 class="card-title">{{ '{{comp.name}}' }}</h5>
 					 	   <p class="card-text">{{ '{{comp.description.length > 200 ? comp.description.substring(0, 200) + \'...\' : comp.description }}' }}</p>
@@ -33,9 +33,19 @@
 				</div>					
 			</div>		
 		</div>
+		<nav aria-label="Page navigation example">
+		  <ul class="pagination justify-content-center">
+		    <li class="page-item">
+		      <a class="page-link" href="#" ng-click="prevPage($event)">Previous</a>
+		    </li>	    
+		    <li class="page-item">
+		      <a class="page-link" href="#" ng-click="nextPage($event)">Next</a>
+		    </li>
+		  </ul>
+		</nav>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-cookies.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-cookies.min.js"></script>	
 	<script src="scripts/app.js"></script>
 </body>
 </html>
