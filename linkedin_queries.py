@@ -6,7 +6,12 @@ from operator import itemgetter
 
 
 def linkedin_api(query, start, chunk):
-    application = linkedin.LinkedInApplication(
+    """ LinkedIn API Token
+    Paste LinkedIn API token here.
+    to get new token, run the following script:
+    """
+
+    application = linkedin.LinkedInApplication(            
         token='AQXds9U0PuMOTTrEIAn_UU0HGJ6Oy54zIRwqBD8l6zAEHRDGO7gBxzJy7dS7PioiNcP_OnfTgKhDaI6phEodupviTrSDW9zD06ZhtWmz4KnyVdg2qaaBZFShMyrltEK80gyOls1zYr7PuheqK6vjAu7SZ119cIAR4OI_MWAjWODObZ0hBtS8wEGc4oRogkyEmY2ufFncjos9O8_LYjcOSjSN_oAn8A4DzsUhi9ZApxGTPtmgDWXfIy3wQj40BOub4ecwnz45sUqvTR9Qlpq43jMNbgxapJ-ADnEH4uZlQLijBSorurwNBMapn6-2-jhRkR_K2dWPdIiPWg-hAQug9YlBjpUF9w')
 
     # Query fields: https://developer.linkedin.com/docs/fields/company-profile
@@ -58,6 +63,7 @@ def sort_companies(companies, query):
     parsed_query = re.split('[^0-9A-Za-z\.\-]|(?<!\w)[.]|[.](?!\w)', query)
     parsed_query = list(filter(None, parsed_query))
     length = len(parsed_query)
+    print(companies[0])
     for company in companies:
         val = 0
         for i in range(length):
@@ -89,7 +95,6 @@ def sort_companies(companies, query):
     return companies
 
 
-'''
 def main():
      query = input("query: ")
      companies = linkedin_api(query, 0, 20)
@@ -98,4 +103,4 @@ def main():
 
 if __name__ == "__main__":
     main()
-'''
+
