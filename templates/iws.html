@@ -19,12 +19,12 @@
 		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="callData($event)">Search</button>
 		  </form>
 		</nav>
-		<div class="results-container" ng-hide="!hasSearch">
+		<div class="results-container" ng-hide="!hasSearch || isloading">
 			<!-- query results -->
 			<div class="container-fluid px-5 py-4">	
 				<div class="row">
 					<div class="card-columns">
-						<div class="card" ng-repeat="comp in companies">
+						<div class="card" ng-repeat="comp in companies" ng-click="loading()">
 							<a ng-href="/companies/{{ '{{comp.universalName}}' }}"><img class="card-img-top" ng-src="https://logo.clearbit.com/{{ '{{comp.websiteUrl}}' }}?size=200" onerror="this.onerror=null" /></a>
 						  	<div class="card-body">
 						  	  <h5 class="card-title">{{ '{{comp.name}}' }}</h5>
@@ -54,6 +54,13 @@
 			<div class="intructions">
 				<p>To start, enter your interest tags in the top search to find related companies. </p>
 				<p>You can click on the company image or the "Learn more" link to see more information for that company.</p>
+			</div>
+		</div>
+		<div class="welcome mx-auto d-block w-50 text-center my-5" ng-hide="!isloading" >
+			<img src="https://biz.prlog.org/OpenEcosystem/logo.png" class="mx-auto d-block pt-4" alt="">
+			<h2>Loading</h2>
+			<div class="intructions">
+				<p>Data collection in progress...</p>
 			</div>
 		</div>
 	</div>

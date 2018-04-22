@@ -26,6 +26,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
 
     // check cookie
     $scope.checkCookie = function(){
+        $scope.isloading = 0
         $scope.currentPage = 0;
         $scope.hasSearch = 0;
         if ($cookies.get('cookie'))
@@ -64,6 +65,11 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
             $scope.currentPage--;
             $scope.callData($event);
         }        
+    }
+
+    $scope.loading = function()
+    {
+        $scope.isloading =1
     }
 }]);
 
