@@ -4,6 +4,8 @@ from config import CLIENT_ID_LI
 from config import CLIENT_SEC_LI
 from linkedin.linkedin import LinkedInAuthentication
 from linkedin.linkedin import LinkedInApplication
+from config import LINKEDIN_USER_NAME
+from config import LINKEDIN_PSWRD
 from selenium import webdriver
 
 
@@ -40,8 +42,8 @@ if __name__ == '__main__':
     username = browser.find_element_by_id("session_key-oauth2SAuthorizeForm")
     password = browser.find_element_by_id(
         "session_password-oauth2SAuthorizeForm")
-    username.send_keys("nikrom17@bu.edu")
-    password.send_keys("Blumenkohl_83")
+    username.send_keys(LINKEDIN_USER_NAME)
+    password.send_keys(LINKEDIN_PSWRD)
     login_attempt = browser.find_element_by_xpath("//*[@type='submit']")
     login_attempt.submit()
     token_url = browser.current_url
