@@ -66,7 +66,6 @@ def get_company(name):
     comp = [query for query in query_data["data"]
             if query['universalName'] == name]
     bzData = getBuzzInfo(comp[0]["name"])
-    yourf= (bzData.contactPerson)
     print(bzData)
     comp[0]["websiteUrl"] = (
         "http://" + comp[0]["websiteUrl"],
@@ -88,7 +87,7 @@ def get_company(name):
     #     bingData = bing_search('search', domain)
     #     print("search")
     #     print(bingData)
-    return render_template('detail.html', compData=comp[0], buzzData=bzData, yourtData= )
+    return render_template('detail.html', compData=comp[0], buzzData=bzData)
 
 def getBuzzInfo(name):
 
