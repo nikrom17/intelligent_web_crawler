@@ -34,11 +34,13 @@ GET: https://api.linkedin.com/v2/search?q=companiesV2
 
 #### Bing
 GET: https://api.cognitive.microsoft.com/bing/v7.0/search[?q][&count][&offset][&mkt][&safesearch]
+
 GET: https://api.cognitive.microsoft.com/bing/v7.0/entities/[?q][&mkt][&count][&offset][&safesearch]
 
 ## Aditional APIs
 ####  Clearbit
 GET: https://logo.clearbit.com/:domain
+
 GET: https://company.clearbit.com/v2/companies/find?domain=:domain
 
 ## Notes
@@ -52,6 +54,19 @@ An accout is need to use the LinkedIn API. The Client ID and Secret are needed t
 1. Run: ` python3 get_linkedin_token.py`
 1. Your token will be displated on stdout and will be valid for 60 days.
 1. Copy and paste this token into `config.py` on line 20.
+
+#### Create Microsoft Azure Account
+Micosoft has a very long free trial period, but it is recommend to sign up for a paid account.
+
+This program uses the bing entity search (https://azure.microsoft.com/en-us/services/cognitive-services/bing-entity-search-api/) and bing custom search (https://azure.microsoft.com/en-us/services/cognitive-services/bing-custom-search/)
+
+The custom seach is used to use the search the entire internet for companies matching the interest tags. The entity search is used to retrive detailed information on the companies found using the custom search. 
+
+This program uses Bing instead of Google because there is no google API equivalent to a standard google search.
+
+
+![alt text](https://bitbucket.org/nikrom17/intelligent-web-crawler/raw/master/pics/bing.png)
+
 
 #### Clearbit API: https://clearbit.com
 Clearbit has a family of APIs that can be used to get information about any company. They allow 50 free querries a month. Prices for a paid plan range from \$100/month (2,500 queries/month) to \$500/month (25,000 queries/month)
