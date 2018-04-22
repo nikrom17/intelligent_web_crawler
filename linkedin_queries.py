@@ -2,7 +2,6 @@ import re
 import json
 
 from linkedin import linkedin
-from operator import itemgetter
 
 
 def linkedin_api(query, start, chunk):
@@ -11,7 +10,7 @@ def linkedin_api(query, start, chunk):
     to get new token, run the following script:
     """
 
-    application = linkedin.LinkedInApplication(            
+    application = linkedin.LinkedInApplication(
         token='AQXds9U0PuMOTTrEIAn_UU0HGJ6Oy54zIRwqBD8l6zAEHRDGO7gBxzJy7dS7PioiNcP_OnfTgKhDaI6phEodupviTrSDW9zD06ZhtWmz4KnyVdg2qaaBZFShMyrltEK80gyOls1zYr7PuheqK6vjAu7SZ119cIAR4OI_MWAjWODObZ0hBtS8wEGc4oRogkyEmY2ufFncjos9O8_LYjcOSjSN_oAn8A4DzsUhi9ZApxGTPtmgDWXfIy3wQj40BOub4ecwnz45sUqvTR9Qlpq43jMNbgxapJ-ADnEH4uZlQLijBSorurwNBMapn6-2-jhRkR_K2dWPdIiPWg-hAQug9YlBjpUF9w')
 
     # Query fields: https://developer.linkedin.com/docs/fields/company-profile
@@ -58,8 +57,6 @@ def sort_companies(companies, query):
         'G': -10,
         'H': -20,
         'I': -20}
-    ranked_list = []
-    ordered_list = []
     parsed_query = re.split('[^0-9A-Za-z\.\-]|(?<!\w)[.]|[.](?!\w)', query)
     parsed_query = list(filter(None, parsed_query))
     length = len(parsed_query)
@@ -67,19 +64,23 @@ def sort_companies(companies, query):
         val = 0
         for i in range(length):
             try:
-                val += company['description'].lower().count(parsed_query[i].lower())
+                val += company['description'].lower().count(
+                        parsed_query[i].lower())
             except BaseException:
                 pass
             try:
-                val += company['specialties']['values'].lower().count(parsed_query[i].lower())
+                val += company['specialties']['values'].lower().count(
+                        parsed_query[i].lower())
             except BaseException:
                 pass
             try:
-                val += company['industries']['values'].lower().count(parsed_query[i].lower())
+                val += company['industries']['values'].lower().count(
+                        parsed_query[i].lower())
             except BaseException:
                 pass
             try:
-                val += company['name'].lower().count(parsed_query[i].lower())
+                val += company['name'].lower().count(
+                        parsed_query[i].lower())
             except BaseException:
                 pass
         try:
@@ -95,11 +96,10 @@ def sort_companies(companies, query):
 
 
 def main():
-     query = input("query: ")
-     companies = linkedin_api(query, 0, 20)
-
+    query = input("query: ")
+    companies = linkedin_api(query, 0, 20)
+    print(companies)
 
 
 if __name__ == "__main__":
     main()
-
