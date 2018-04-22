@@ -14,6 +14,16 @@
  * Sidebar
  */
 
+.form-inline
+{
+  width: 45%;
+}
+
+.search-company.form-control{
+  width: calc(100% - 90px);
+}
+
+
  .nav-header{
   background-color: #292b2c;
  }

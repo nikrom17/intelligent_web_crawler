@@ -99,8 +99,11 @@ def get_company(name):
         else:
             bingData['sources'].append(link)
 
-    if bzData.contactPerson:
-        bingData['person'] = get_entities_from_search(bzData.contactPerson)
+    # You can uncomment this code if you want more information regarding to the contact person
+    # it's commented right now because of performance purposes:
+    
+    # if (bzData and bzData.contactPerson):
+    #     bingData['person'] = get_entities_from_search(bzData.contactPerson)
 
     return render_template(
         'detail.html',

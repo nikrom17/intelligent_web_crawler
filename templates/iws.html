@@ -5,17 +5,17 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<title>Intelligent web Scraper</title>
+	<title>Intelligent web Crawler</title>
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.0/css/bootstrap.min.css" integrity="sha384-9gVQ4dYFwwWSjIDZnLEWnxCjeSWFphJiwGPXr1jddIhOegiu1FwO5qRGvFXOdJZ4" crossorigin="anonymous">
 	<link href="styles/styles.css" rel="stylesheet">
 </head>
 <body ng-app="myModule">
 	<div ng-controller="HomeCtrl" ng-init="checkCookie()">
 		<nav class="navbar nav-header navbar-dark bg-dark" justify-content-between">
-		  <h1><a class="navbar-brand" href="/">Intelligent Web Scrapper</a></h1>
+		  <h1><a class="navbar-brand" href="/">Intelligent Web Crawler</a></h1>
 		  <!-- search form -->
 		  <form class="form-inline">
-		    <input class="form-control mr-sm-2" type="search" name="search-text" ng-model="searchText" placeholder="Search" aria-label="Search">
+		    <input class="form-control search-company mr-sm-2" type="search" name="search-text" ng-model="searchText" placeholder="Search" aria-label="Search">
 		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="callData($event)">Search</button>
 		  </form>
 		</nav>
@@ -49,10 +49,11 @@
 			</nav>
 		</div>
 		<div class="welcome mx-auto d-block w-50 text-center my-5" ng-hide="hasSearch" >
-			<h2>Welcome to the Intelligent Web Scrapper</h2>
+			<img src="https://biz.prlog.org/OpenEcosystem/logo.png" class="mx-auto d-block pt-4" alt="">
+			<h2>Welcome to the Intelligent Web Crawler</h2>
 			<div class="intructions">
-				<p>To start you can use the search bar at the top, enter the keywords related with your request. You will get the more relevant results about companies.</p>
-				<p>You can click on the company image or the "Learn more link to the the detail information about that was scraped a company"</p>
+				<p>To start, enter your interest tags in the top search to find related companies. </p>
+				<p>You can click on the company image or the "Learn more" link to see more information for that company.</p>
 			</div>
 		</div>
 	</div>
