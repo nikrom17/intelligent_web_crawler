@@ -1,7 +1,7 @@
-import clearbit
 import re
 import requests
 
+from config import LINKEDIN_TOKEN
 from flask_cors import CORS
 from flask import Flask, render_template, jsonify, request
 from linkedin import linkedin
@@ -23,8 +23,7 @@ def showMachineList():
 # You can use this token for testing purposes
 # to get a new code, please refer to
 # https://developer.linkedin.com/docs/v2/oauth2-client-credentials-flow
-application = linkedin.LinkedInApplication(
-    token='AQWza0c5LYCMiNBq61PIbXR0-hbxmy3wS2LimHAB6J6adocMKAen6hUHzS31Lh9eMkscP5Nb35Fp2y-3Wfy1fSTFZRschEWmvG5CPE9-zJYy-o97kblbkoFxuzHTr1quMuJp8VbYI02mM3pPCzSYhOmOZAqATF77all48LZ1-s2YtKi503mI5Wkn2lTovIeHpJr7ZodSpg625cB8CpySixjWrB5czaKqezVEPemJVSwsRXzVizX5FbKjWBzHRAhIXqRNIstlU1gDPkZCIE-vymoplW97CZxVjky4MRePE2bgg23x7_8Up2kqzCEuuamH-l-KWaxvkvR_6JR2WNa4ubzMwvQ7CQ')
+application = linkedin.LinkedInApplication(LINKEDIN_TOKEN)
 
 
 # Query fields: https://developer.linkedin.com/docs/fields/company-profile
@@ -43,6 +42,7 @@ def get_query(keywords):
         params={
             'keywords': keywords,
             'facet': 'location,us:84'})
+
 
 query_data = []
 
@@ -65,7 +65,9 @@ def get_tasks():
 def get_company(name):
     comp = [query for query in query_data["data"]
             if query['universalName'] == name]
-    bzData = getBuzzInfo(comp[0]["name"],comp[0]["locations"]["values"][0]["address"]["postalCode"])
+    bzData = getBuzzInfo(
+        comp[0]["name"],
+        comp[0]["locations"]["values"][0]["address"]["postalCode"])
     comp[0]["websiteUrl"] = (
         "http://" + comp[0]["websiteUrl"],
         comp[0]["websiteUrl"])[
@@ -73,16 +75,16 @@ def get_company(name):
     domain = re.split(
         '^(?:https?:\/\/)?(?:[^@\n]+@)?(?:www\.)?([^:\/\n]+)',
         comp[0]["websiteUrl"].lower())[1]
-    newLInk = 'http://' + domain
 
-    # If you'd like to use the Deep Learning NER model to attempt to 
+    # If you'd like to use the Deep Learning NER model to attempt to
     # grab named entities then you can pass 'get_entities=True'
     # into scrape_contact_from_url. It'll load the model and tensorflow,
     # return num, emails, links, entities, extras
     # The model needs to be trained more and it runs slowly so it's off by
     # default
-    num, emails, links, _, extras = scrape_contact_from_url(domain, get_entities=False)
-    
+    num, emails, links, _, extras = scrape_contact_from_url(
+        domain, get_entities=False)
+
     bingData = {}
     bingData['sources'] = []
 
@@ -98,35 +100,52 @@ def get_company(name):
             bingData['sources'].append(link)
 
     if bzData.contactPerson:
-        bingData['person'] = get_entities_from_search(buzzData.contactPerson)
-    
-    return render_template('detail.html', compData=comp[0], buzzData=bzData, bingData=bingData)
+        bingData['person'] = get_entities_from_search(bzData.contactPerson)
+
+    return render_template(
+        'detail.html',
+        compData=comp[0],
+        buzzData=bzData,
+        bingData=bingData)
 
 # look for data on buzzfile page http://www.buzzfile.com/
+
+
 def getBuzzInfo(name, postalCode):
 
     data = {}
-    link = 'http://www.buzzfile.com/Search/Company/Results?searchTerm='+ name +'&parameter=zipcode--' + postalCode +'&type=1'
+    link = 'http://www.buzzfile.com/Search/Company/Results?searchTerm=' + \
+        name + '&parameter=zipcode--' + postalCode + '&type=1'
     html = requests.get(link)
     soup = bs(html.text, "lxml")
 
-    if ( len(soup.select('#companyList tr:nth-of-type(3) td:nth-of-type(2) a')) == 0 ):
+    if (len(soup.select(
+            '#companyList tr:nth-of-type(3) td:nth-of-type(2) a')) == 0):
         return 0
     else:
-        searchResult = (soup.select('#companyList tr:nth-of-type(3) td:nth-of-type(2) a')[0]['href'])
+        searchResult = (
+            soup.select(
+                '#companyList tr:nth-of-type(3) td:nth-of-type(2) a')[0]['href'])
     data['src'] = 'http://www.buzzfile.com' + searchResult
     cpage = requests.get(data['src'])
     soup = bs(cpage.text, "lxml")
-    contactInfo = soup.select('.company-info-box .company-info-box-title + .panel-collapse')[0]
-    data['address'] = contactInfo.select('[itemprop="address"]')[0].text.strip()
-    data['contactPerson'] = contactInfo.select('[itemprop="employee"]')[0].text.strip()
-    data['contactTitle'] = contactInfo.select('[itemprop="contactType"]')[0].text.strip()
-    data['contactPhone'] = contactInfo.select('[itemprop="telephone"]')[0].text.strip()
+    contactInfo = soup.select(
+        '.company-info-box .company-info-box-title + .panel-collapse')[0]
+    data['address'] = contactInfo.select(
+        '[itemprop="address"]')[0].text.strip()
+    data['contactPerson'] = contactInfo.select(
+        '[itemprop="employee"]')[0].text.strip()
+    data['contactTitle'] = contactInfo.select(
+        '[itemprop="contactType"]')[0].text.strip()
+    data['contactPhone'] = contactInfo.select(
+        '[itemprop="telephone"]')[0].text.strip()
 
-    bsInfo = soup.select('.company-info-box .company-info-box-title + .panel-collapse')[2]
+    bsInfo = soup.select(
+        '.company-info-box .company-info-box-title + .panel-collapse')[2]
     data['bsDesc'] = bsInfo.select('[itemprop="description"]')[0].text.strip()
 
-    foundedYear = soup.select('.company-info-box-left .company-info-header span')
+    foundedYear = soup.select(
+        '.company-info-box-left .company-info-header span')
     data['fYear'] = foundedYear[0].text.strip()
 
     bsinfo2 = soup.select('.company-info-box .my-table-td-header + td a')
@@ -134,7 +153,8 @@ def getBuzzInfo(name, postalCode):
     data['category'] = bsinfo2[1].text.strip()
     data['industry'] = bsinfo2[2].text.strip()
 
-    return data 
+    return data
+
 
 if __name__ == "__main__":
     app.run()
