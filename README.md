@@ -2,7 +2,8 @@
 *Deployment Guide*
 
 ### Description
-This web scraping program uses a combination of LinkedIn, Google and Clearbit APIs to generate a list of companies related to specific interest tags. The results are displayed using a custom algorithm to put companies Open Ecosystem Network would likely target (startups that are rapidly growing) first. The program uses a simple web interface to search and navigate the responses.
+This web scraping program uses a combination of LinkedIn and Bing APIs, along with a custom web scraping algorithm to generate a list of companies related to specific interest tags.
+The results are displayed using a custom algorithm to put companies Open Ecosystem Network would likely target (startups that are rapidly growing) first. The program uses a simple web interface to search and navigate the responses.
 
 
 ## Installation Instructions
