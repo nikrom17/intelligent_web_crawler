@@ -97,7 +97,7 @@ def get_company(name):
         else:
             bingData['sources'].append(link)
 
-    if buzzData.contactPerson:
+    if bzData.contactPerson:
         bingData['person'] = get_entities_from_search(buzzData.contactPerson)
     
     return render_template('detail.html', compData=comp[0], buzzData=bzData, bingData=bingData)
