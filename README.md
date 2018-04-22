@@ -55,6 +55,8 @@ An accout is need to use the LinkedIn API. The Client ID and Secret are needed t
 1. Your token will be displated on stdout and will be valid for 60 days.
 1. Copy and paste this token into `config.py` on line 20.
 
+![alt_text](https://bitbucket.org/nikrom17/intelligent-web-crawler/raw/master/pics/LI.png)
+
 #### Create Microsoft Azure Account
 Micosoft has a very long free trial period, but it is recommend to sign up for a paid account.
 
@@ -74,5 +76,6 @@ Clearbit has a family of APIs that can be used to get information about any comp
 The also offer additional packages. One of their biggest advantages is their integration with SalesForce.
 
 To use the API, copy your Clearbit key to the file `app_clearbit.py`
+
 ![alt text](https://bytebucket.org/nikrom17/intelligent-web-crawler/raw/64546c4acfc2d7207ebe922f6a434c8fb76be69b/pics/CB.png?token=3aa383f6eb698c4f5baf98e6ad221518845deea5)
 
