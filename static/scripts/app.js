@@ -5,7 +5,7 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
     // get data from flask
     $scope.callData = function($event){
         $event.preventDefault();
-
+        $scope.hasSearch = 1;
         $scope.companies = {};     
         $http({
             method:'POST',
@@ -27,10 +27,11 @@ app.controller('HomeCtrl', ['$http','$scope','$cookies',function($http,$scope,$c
     // check cookie
     $scope.checkCookie = function(){
         $scope.currentPage = 0;
+        $scope.hasSearch = 0;
         if ($cookies.get('cookie'))
         {
-           $scope.searchText = $cookies.get('cookie');
-           console.log("hascookie");
+            $scope.hasSearch = 1;
+            $scope.searchText = $cookies.get('cookie');
                $http({
                 method:'POST',
                 url:'http://127.0.0.1:5000/iws/api/v1.0/companies',

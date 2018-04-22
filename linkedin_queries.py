@@ -63,7 +63,6 @@ def sort_companies(companies, query):
     parsed_query = re.split('[^0-9A-Za-z\.\-]|(?<!\w)[.]|[.](?!\w)', query)
     parsed_query = list(filter(None, parsed_query))
     length = len(parsed_query)
-    print(companies[0])
     for company in companies:
         val = 0
         for i in range(length):

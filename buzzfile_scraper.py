@@ -1,20 +1,42 @@
-# **************************************************************************** #
-#                                                                              #
-#                                                         :::      ::::::::    #
-#    buzzfile_scraper.py                                :+:      :+:    :+:    #
-#                                                     +:+ +:+         +:+      #
-#    By: nroman <marvin@42.fr>                      +#+  +:+       +#+         #
-#                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2018/04/21 15:37:20 by nroman            #+#    #+#              #
-#    Updated: 2018/04/21 16:15:15 by nroman           ###   ########.fr        #
-#                                                                              #
-# **************************************************************************** #
+import clearbit
+import re
+import requests
 
-from selenium import webdriver
+from flask_cors import CORS
+from flask import Flask, render_template, jsonify, request
+from srcs.search_utils import scrape_url
+from linkedin import linkedin
+from linkedin_queries import linkedin_api
+from srcs.bing_search_api import search as bing_search
+from bs4 import BeautifulSoup as bs
 
-browser = webdriver.Chrome(executable_path='./chromedriver')
-browser.get('http://www.buzzfile.com/business/Tesla-650-681-5000')
-browser.find_element_by_css_selector('#companyList tr:nth-child(2)').text
-'Zilliant Incorporated\nHQ\n720 Brazos St\nAustin\nTX\n78701\n77\n30,122,331\nComputer Software Development'
+def run():
+    comp = 'Ideator, Inc.'
+    html = requests.get('http://www.buzzfile.com/Search/Company/Results?searchTerm='+ comp +'&type=1')
+    soup = bs(html.text, "lxml")
+    #print(soup)
+    searchResult = (soup.select('#companyList tr:nth-of-type(3) td:nth-of-type(2) a')[0]['href'])
+    cpage = requests.get('http://www.buzzfile.com' + searchResult)
+    soup = bs(cpage.text, "lxml")
+    contactInfo = soup.select('.company-info-box .company-info-box-title + .panel-collapse')[0]
+    print(contactInfo.select('[itemprop="address"]')[0].text.strip())
+    print(contactInfo.select('[itemprop="employee"]')[0].text.strip())
+    print(contactInfo.select('[itemprop="contactType"]')[0].text.strip())
+    print(contactInfo.select('[itemprop="telephone"]')[0].text.strip())
 
->>> browser.find_element_by_css_selector('#companyList tr:nth-child(2) td:nth-child(2)').text
+    bsInfo = soup.select('.company-info-box .company-info-box-title + .panel-collapse')[2]
+    print(bsInfo.select('[itemprop="description"]')[0].text.strip())
+
+    foundedYear = soup.select('.company-info-box-left .company-info-header span')
+    print(foundedYear[0].text.strip())
+    print(foundedYear[3].text.strip())
+    print(foundedYear[5].text.strip())
+    print(foundedYear[7].text.strip())
+
+    bsinfo2 = soup.select('.company-info-box .my-table-td-header + td a')
+    print(bsinfo2[0].text.strip())
+    print(bsinfo2[1].text.strip())
+    print(bsinfo2[2].text.strip())
+
+if __name__ == "__main__":
+    run()

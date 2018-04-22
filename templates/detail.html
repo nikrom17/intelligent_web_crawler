@@ -17,10 +17,14 @@
 	<!-- main info -->
 	<div class="container-fluid px-5 py-4">		
 		<img src="https://logo.clearbit.com/{{compData.websiteUrl}}?size=400" alt="" class="mx-auto d-block pb-4" />
-
+		<a href="{{compData.websiteUrl}}" target="_blank" class="mx-auto d-block pt-4">Go to website</a>
 				
-		{% if compData.specialties %}
+		
 		<h3>Product/ Services</h3>
+		<p>{{compData.description}}</p>
+
+		<h3>Categories</h3>
+		{% if compData.specialties %}
 		<p>
 			{% for specialty in compData.specialties["values"] %}				
 				{% if loop.last %}
@@ -30,14 +34,26 @@
 				{% endif %}		   
 			{% endfor %}
 		</p>
-		{% endif %}	
+		{% endif %}
+
+
 
 		{% if compData.employeeCountRange %}
 			<p>Employee Count: {{compData.employeeCountRange.name}}</p>
 		{% endif %}	
+
+		{% if buzzData %}
+		<h3>Contact:</h3>
+		<p>Contact Name: {{buzzData["contactPerson"]}}</p>
+		<p>Contact Designation: {{buzzData["contactTitle"]}}</p>
+		<p>Contact Phone: {{buzzData["contactPhone"]}}</p>
+
+		<h3>Founded</h3>
+		<p>{{buzzData["fYear"]}}</p>
+		{% endif %}	
 		
 		{% if compData.locations %}
-		<h3>Contact</h3>
+		<h3>Phone(s):</h3>
 		<p>
 			{% for location in compData.locations["values"] %}				
 				{% if loop.last %}
@@ -47,16 +63,18 @@
 				{% endif %}		   
 			{% endfor %}
 		</p>
-		{% endif %}	
-		
-		<a href="{{compData.websiteUrl}}" target="_blank">Go to website</a>
+
+		{% endif %}		
 		
 		<h3>Other Contacts</h3>
 		<p>Facebook</p>
 		<p>Linkedin</p>
 		<p>twitter</p>
 		
-		{% if compData.locations %}
+		{% if buzzData %}
+		<h3>Location</h3>
+		<p>{{buzzData["address"]}}</p>
+		{% elif compData.locations %}
 		<h3>Location</h3>
 		<p>
 			{% for location in compData.locations["values"] %}				
@@ -69,14 +87,11 @@
 		</p>
 		{% endif %}		
 		
-		<h3>Synopsis of Services</h3>
-		<p>{{compData.description}}</p>
+		<h3>Description</h3>
+		<p>{{buzzData.bsDesc}}</p>
 		
 		<h3>Sources:</h3>
-		<p>Source1</p>
-		<p>Source2</p>
-		<p>Source3</p>
-		
+		<a href="{{buzzData["src"]}}">Buzzfile Page</a>		
 		
 	</div>
 	<script src="scripts/app.js"></script>

@@ -19,33 +19,42 @@
 		    <button class="btn btn-outline-success my-2 my-sm-0" type="submit" ng-click="callData($event)">Search</button>
 		  </form>
 		</nav>
-		<!-- query results -->
-		<div class="container-fluid px-5 py-4">	
-			<div class="row">
-				<div class="card-columns">
-					<div class="card" ng-repeat="comp in companies">
-						<a ng-href="/companies/{{ '{{comp.universalName}}' }}"><img class="card-img-top" ng-src="https://logo.clearbit.com/{{ '{{comp.websiteUrl}}' }}?size=200" onerror="this.onerror=null" /></a>
-					  	<div class="card-body">
-					  	  <h5 class="card-title">{{ '{{comp.name}}' }}</h5>
-					 	   <p class="card-text">{{ '{{comp.description.length > 200 ? comp.description.substring(0, 200) + \'...\' : comp.description }}' }}</p>
-						   <a ng-href="{{ '{{comp.websiteUrl.startsWith(\'http\') ? comp.websiteUrl : \'http://\' + comp.websiteUrl}}' }}" target="_blank" >Website</a>
-						   <a ng-href="/companies/{{ '{{comp.universalName}}' }}" class="float-right">Learn More</a>
-						</div>
-					</div>		
-				</div>					
-			</div>		
+		<div class="results-container" ng-hide="!hasSearch">
+			<!-- query results -->
+			<div class="container-fluid px-5 py-4">	
+				<div class="row">
+					<div class="card-columns">
+						<div class="card" ng-repeat="comp in companies">
+							<a ng-href="/companies/{{ '{{comp.universalName}}' }}"><img class="card-img-top" ng-src="https://logo.clearbit.com/{{ '{{comp.websiteUrl}}' }}?size=200" onerror="this.onerror=null" /></a>
+						  	<div class="card-body">
+						  	  <h5 class="card-title">{{ '{{comp.name}}' }}</h5>
+						 	   <p class="card-text">{{ '{{comp.description.length > 200 ? comp.description.substring(0, 200) + \'...\' : comp.description }}' }}</p>
+							   <a ng-href="{{ '{{comp.websiteUrl.startsWith(\'http\') ? comp.websiteUrl : \'http://\' + comp.websiteUrl}}' }}" target="_blank" >Website</a>
+							   <a ng-href="/companies/{{ '{{comp.universalName}}' }}" class="float-right">Learn More</a>
+							</div>
+						</div>		
+					</div>					
+				</div>		
+			</div>
+			<!-- pagination -->
+			<nav aria-label="Page navigation example">
+			  <ul class="pagination justify-content-center">
+			    <li class="page-item">
+			      <a class="page-link" href="#" ng-click="prevPage($event)">Previous</a>
+			    </li>	    
+			    <li class="page-item">
+			      <a class="page-link" href="#" ng-click="nextPage($event)">Next</a>
+			    </li>
+			  </ul>
+			</nav>
 		</div>
-		<!-- pagination -->
-		<nav aria-label="Page navigation example">
-		  <ul class="pagination justify-content-center">
-		    <li class="page-item">
-		      <a class="page-link" href="#" ng-click="prevPage($event)">Previous</a>
-		    </li>	    
-		    <li class="page-item">
-		      <a class="page-link" href="#" ng-click="nextPage($event)">Next</a>
-		    </li>
-		  </ul>
-		</nav>
+		<div class="welcome mx-auto d-block w-50 text-center my-5" ng-hide="hasSearch" >
+			<h2>Welcome to the Intelligent Web Scrapper</h2>
+			<div class="intructions">
+				<p>To start you can use the search bar at the top, enter the keywords related with your request. You will get the more relevant results about companies.</p>
+				<p>You can click on the company image or the "Learn more link to the the detail information about that was scraped a company"</p>
+			</div>
+		</div>
 	</div>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.5.6/angular-cookies.min.js"></script>	
