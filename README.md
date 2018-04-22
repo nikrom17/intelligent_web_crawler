@@ -32,13 +32,14 @@ https://chromedriver.storage.googleapis.com/index.html?path=2.35/
 ####  LinkedIn 
 GET: https://api.linkedin.com/v2/search?q=companiesV2
 
+#### Bing
+GET: https://api.cognitive.microsoft.com/bing/v7.0/search[?q][&count][&offset][&mkt][&safesearch]
+GET: https://api.cognitive.microsoft.com/bing/v7.0/entities/[?q][&mkt][&count][&offset][&safesearch]
+
+## Aditional APIs
 ####  Clearbit
 GET: https://logo.clearbit.com/:domain
 GET: https://company.clearbit.com/v2/companies/find?domain=:domain
-
-#### Google
-This program doesn't use a Google api. Instead, it uses a python package called selenium to automatically navigate google chrome to perform the querries. Google does not offer an API that provides the same functionality as a standard google search.  
-
 
 ## Notes
 
