@@ -52,7 +52,7 @@
 		<p>{{buzzData["fYear"]}}</p>
 		{% endif %}	
 		
-		{% if compData.locations %}
+		{% if compData.locations[0] %}
 		<h3>Phone(s):</h3>
 		<p>
 			{% for location in compData.locations["values"] %}				
@@ -67,9 +67,9 @@
 		{% endif %}		
 		
 		<h3>Other Contacts</h3>
-		<p>Facebook</p>
-		<p>Linkedin</p>
-		<p>twitter</p>
+		<p><a href="{{bingData.facebook}}" target="_blank">Facebook</a></p>
+		<p><a href="{{bingData.twitter}}" target="_blank">Twitter</a></p>
+		<p><a href="{{bingData.linkedin}}" target="_blank">Linkedin</a></p>
 		
 		{% if buzzData %}
 		<h3>Location</h3>
@@ -91,7 +91,15 @@
 		<p>{{buzzData.bsDesc}}</p>
 		
 		<h3>Sources:</h3>
-		<a href="{{buzzData["src"]}}">Buzzfile Page</a>		
+		<p><a href="{{bingData.linkedin}}" target="_blank">Linkedin</a></p>
+		{% if buzzData %}
+		<p><a href="{{buzzData.src}}" target="_blank">Buzzfile Page</a></p>
+		{% endif %}	
+		{% for source in bingData.sources %}				
+			{% if source %}
+				<p><a href="{{source}}" target="_blank">{{source}}</a></p>	
+			{% endif %}		   
+		{% endfor %}
 		
 	</div>
 	<script src="scripts/app.js"></script>
