@@ -72,7 +72,7 @@ This program uses Bing instead of Google because there is no google API equivale
 
 
 #### Clearbit API: https://clearbit.com
-Clearbit has a family of APIs that can be used to get information about any company. They allow 50 free querries a month. Prices for a paid plan range from \$100/month (2,500 queries/month) to \$500/month (25,000 queries/month)
+Clearbit has a family of APIs that can be used to get information about any company. They allow 50 free querries a month. Prices for a paid plan range from $100/month (2,500 queries/month) to $500/month (25,000 queries/month)
 
 The also offer additional packages. One of their biggest advantages is their integration with SalesForce.
 
