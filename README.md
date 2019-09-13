@@ -56,7 +56,7 @@ An accout is need to use the LinkedIn API. The Client ID and Secret are needed t
 1. Your token will be displated on stdout and will be valid for 60 days.
 1. Copy and paste this token into `config.py` on line 20.
 
-![alt_text](https://bitbucket.org/nikrom17/intelligent-web-crawler/raw/master/pics/LI.png)
+![alt_text](https://raw.githubusercontent.com/nikrom17/intelligent_web_crawler/master/pics/LI.png)
 
 #### Create Microsoft Azure Account
 Micosoft has a very long free trial period, but it is recommend to sign up for a paid account.
@@ -68,7 +68,7 @@ The custom seach is used to use the search the entire internet for companies mat
 This program uses Bing instead of Google because there is no google API equivalent to a standard google search.
 
 
-![alt text](https://bitbucket.org/nikrom17/intelligent-web-crawler/raw/master/pics/bing.png)
+![alt text](https://raw.githubusercontent.com/nikrom17/intelligent_web_crawler/master/pics/bing.png)
 
 
 #### Clearbit API: https://clearbit.com
