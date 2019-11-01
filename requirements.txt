@@ -6,7 +6,7 @@ requests==2.18.4
 numpy==1.14.2
 tensorflow==1.7.0
 Keras==2.1.5
-Flask==0.12.2
+Flask==1.0
 Flask-Cors==3.0.3
 anago==0.0.5
 -e git+https://github.com/DEKHTIARJonathan/python3-linkedin.git@307b096610e32f041668811890604388c3c9d526#egg=python3_linkedin
