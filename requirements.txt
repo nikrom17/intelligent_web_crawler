@@ -3,7 +3,7 @@ selenium==3.11.0
 click==6.7
 clearbit==0.1.7
 requests==2.18.4
-numpy==1.14.2
+numpy==1.22.0
 tensorflow==1.7.0
 Keras==2.1.5
 Flask==0.12.2
